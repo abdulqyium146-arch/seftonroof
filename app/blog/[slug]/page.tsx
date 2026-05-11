@@ -24,11 +24,33 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return {
     title: post.title,
     description: post.excerpt,
+    keywords: post.tags.join(", "),
+    authors: [{ name: post.author, url: SITE.url }],
     openGraph: {
       type: "article",
       title: post.title,
       description: post.excerpt,
+      url: `${SITE.url}/blog/${slug}`,
+      siteName: SITE.name,
+      locale: "en_GB",
       publishedTime: post.publishedAt,
+      modifiedTime: post.publishedAt,
+      authors: [SITE.name],
+      tags: post.tags,
+      images: [
+        {
+          url: `${SITE.url}/og-image.jpg`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [`${SITE.url}/og-image.jpg`],
     },
     alternates: { canonical: `${SITE.url}/blog/${slug}` },
   };
@@ -52,23 +74,47 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${SITE.url}/blog/${slug}/#article`,
     headline: post.title,
     description: post.excerpt,
+    image: {
+      "@type": "ImageObject",
+      url: `${SITE.url}/og-image.jpg`,
+      width: 1200,
+      height: 630,
+    },
     author: {
       "@type": "Organization",
+      "@id": `${SITE.url}/#organization`,
       name: SITE.name,
       url: SITE.url,
     },
     publisher: {
       "@type": "Organization",
+      "@id": `${SITE.url}/#organization`,
       name: SITE.name,
       url: SITE.url,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE.url}/logo.png`,
+        width: 400,
+        height: 120,
+      },
     },
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
-    mainEntityOfPage: `${SITE.url}/blog/${slug}`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE.url}/blog/${slug}`,
+    },
     keywords: post.tags.join(", "),
     articleSection: post.category,
+    inLanguage: "en-GB",
+    about: { "@id": `${SITE.url}/#organization` },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".article-excerpt"],
+    },
   };
 
   const contentSections = post.content.split("\n\n").filter(Boolean);
@@ -118,7 +164,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="grid lg:grid-cols-4 gap-12">
             {/* Article */}
             <article className="lg:col-span-3">
-              <p className="text-slate-600 text-lg leading-relaxed mb-8 font-medium">
+              <p className="article-excerpt text-slate-600 text-lg leading-relaxed mb-8 font-medium">
                 {post.excerpt}
               </p>
 

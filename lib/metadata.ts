@@ -54,6 +54,8 @@ export function generateMetadata({
     authors: [{ name: SITE.name, url: SITE.url }],
     creator: SITE.name,
     publisher: SITE.name,
+    category: "Home Services",
+    formatDetection: { email: false, address: false, telephone: false },
     metadataBase: new URL(SITE.url),
     alternates: {
       canonical: pageUrl,
@@ -126,11 +128,13 @@ export function generateServiceMetadata(
 
 export function generateAreaMetadata(
   areaName: string,
-  areaSlug: string
+  areaSlug: string,
+  geo?: { lat: number; lng: number },
+  postcode?: string
 ): Metadata {
-  return generateMetadata({
-    title: `Roofing Services ${areaName}`,
-    description: `Expert roofing repairs, cleaning and property maintenance in ${areaName}, Liverpool. Local roofers with 14+ years experience. Free quotes, 24/7 emergency response.`,
+  const base = generateMetadata({
+    title: `Roofing Services ${areaName} — Liverpool Roofer`,
+    description: `Expert roofing repairs, cleaning and property maintenance in ${areaName}${postcode ? ` (${postcode})` : ""}, Liverpool. Local roofers with 14+ years experience. Free quotes, 24/7 emergency response.`,
     path: `/areas/${areaSlug}`,
     keywords: [
       `roofing ${areaName}`,
@@ -138,6 +142,19 @@ export function generateAreaMetadata(
       `roof repairs ${areaName}`,
       `gutter cleaning ${areaName}`,
       `roof cleaning ${areaName}`,
+      `emergency roofer ${areaName}`,
+      `${areaName} roofing company`,
     ],
   });
+
+  if (geo) {
+    base.other = {
+      "geo.region": "GB-LIV",
+      "geo.placename": `${areaName}, Merseyside`,
+      "geo.position": `${geo.lat};${geo.lng}`,
+      "ICBM": `${geo.lat}, ${geo.lng}`,
+    };
+  }
+
+  return base;
 }

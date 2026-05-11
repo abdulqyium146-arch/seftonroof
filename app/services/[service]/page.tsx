@@ -11,7 +11,7 @@ import { testimonials } from "@/data/testimonials";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { SchemaOrg } from "@/components/ui/SchemaOrg";
-import { generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema, generateHowToSchema } from "@/lib/schema";
 import { generateServiceMetadata } from "@/lib/metadata";
 import { SITE } from "@/lib/constants";
 
@@ -49,6 +49,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
   const faqSchema = generateFAQSchema(service.faqs);
 
+  const howToSchema = generateHowToSchema(service.name, service.slug, service.process);
+
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: SITE.url },
     { name: "Services", url: `${SITE.url}/services` },
@@ -68,6 +70,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   return (
     <>
       <SchemaOrg schema={serviceSchema} />
+      <SchemaOrg schema={howToSchema} />
       <SchemaOrg schema={faqSchema} />
       <SchemaOrg schema={breadcrumbSchema} />
 

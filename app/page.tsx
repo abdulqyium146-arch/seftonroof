@@ -61,7 +61,34 @@ export default function HomePage() {
       {/* 8. Service areas */}
       <ServiceAreas />
 
-      {/* 9. FAQs */}
+      {/* 9. Liverpool coverage map */}
+      <section className="py-16 bg-slate-50" aria-label="Liverpool service area map">
+        <div className="container-xl">
+          <div className="text-center mb-10">
+            <div className="badge-orange mb-4 w-fit mx-auto">Our Coverage Area</div>
+            <h2 className="text-3xl sm:text-4xl font-black text-brand-navy mb-3">
+              Serving Liverpool &amp; Merseyside
+            </h2>
+            <p className="text-slate-600 max-w-xl mx-auto">
+              Based in Waterloo, we cover all of Liverpool and the surrounding Merseyside area — typically on-site within 60 minutes.
+            </p>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-premium border border-slate-200">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152269.15539195805!2d-2.9185897!3d53.393262799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487adf8a647060b7%3A0x42dc046f3f176e01!2sLiverpool%2C%20UK!5e0!3m2!1sen!2s!4v1778479862471!5m2!1sen!2s"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Sefton Roofing service area — Liverpool and Merseyside"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 10. FAQs */}
       <FAQ limit={10} />
 
       {/* 10. Final CTA */}

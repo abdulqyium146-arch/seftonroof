@@ -4,6 +4,8 @@ import { MapPin, ArrowRight, Phone, Clock } from "lucide-react";
 import { areas } from "@/data/areas";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { SchemaOrg } from "@/components/ui/SchemaOrg";
+import { generateItemListSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -14,8 +16,23 @@ export const metadata: Metadata = {
 };
 
 export default function AreasPage() {
+  const itemListSchema = generateItemListSchema(
+    areas.map((a) => ({
+      name: `Roofing Services ${a.name}`,
+      url: `${SITE.url}/areas/${a.slug}`,
+    })),
+    "Sefton Roofing Service Areas — Liverpool & Merseyside"
+  );
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: SITE.url },
+    { name: "Service Areas", url: `${SITE.url}/areas` },
+  ]);
+
   return (
     <>
+      <SchemaOrg schema={itemListSchema} />
+      <SchemaOrg schema={breadcrumbSchema} />
       {/* Hero */}
       <section className="bg-brand-navy py-20">
         <div className="container-xl">

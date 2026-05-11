@@ -27,6 +27,12 @@ export const metadata: Metadata = {
   authors: [{ name: SITE.name, url: SITE.url }],
   creator: SITE.name,
   publisher: SITE.name,
+  category: "Home Services",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   robots: {
     index: true,
     follow: true,
@@ -42,12 +48,22 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE.name,
     locale: "en_GB",
+    images: [
+      {
+        url: `${SITE.url}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: `${SITE.name} — Liverpool's Trusted Roofing Specialists`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    site: "@seftonroofing",
+    creator: "@seftonroofing",
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "789bd5951d6ca0e9",
   },
   alternates: {
     canonical: SITE.url,
@@ -77,7 +93,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-GB" className={inter.variable}>
-      <head />
+      <head>
+        <link rel="preconnect" href="https://maps.googleapis.com" />
+        <link rel="preconnect" href="https://maps.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//maps.googleapis.com" />
+        <link rel="dns-prefetch" href="//maps.gstatic.com" />
+      </head>
       <body className="antialiased">
         <SchemaOrg schema={generateLocalBusinessSchema()} />
         <SchemaOrg schema={generateWebSiteSchema()} />

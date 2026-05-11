@@ -9,7 +9,7 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { SchemaOrg } from "@/components/ui/SchemaOrg";
-import { generateFAQSchema, generateBreadcrumbSchema, generateLocalBusinessSchema } from "@/lib/schema";
+import { generateFAQSchema, generateBreadcrumbSchema, generateAreaPageSchema } from "@/lib/schema";
 import { generateAreaMetadata } from "@/lib/metadata";
 import { globalFaqs } from "@/data/faqs";
 import { SITE } from "@/lib/constants";
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: AreaPageProps): Promise<Metad
   const { area: areaSlug } = await params;
   const area = getAreaBySlug(areaSlug);
   if (!area) return {};
-  return generateAreaMetadata(area.name, area.slug);
+  return generateAreaMetadata(area.name, area.slug, area.geo, area.postcode);
 }
 
 export default async function AreaPage({ params }: AreaPageProps) {
@@ -62,11 +62,11 @@ export default async function AreaPage({ params }: AreaPageProps) {
   ]);
 
   const faqSchema = generateFAQSchema(areaFaqs);
-  const localBusinessSchema = generateLocalBusinessSchema();
+  const areaSchema = generateAreaPageSchema(area);
 
   return (
     <>
-      <SchemaOrg schema={localBusinessSchema} />
+      <SchemaOrg schema={areaSchema} />
       <SchemaOrg schema={breadcrumbSchema} />
       <SchemaOrg schema={faqSchema} />
 
@@ -233,8 +233,29 @@ export default async function AreaPage({ params }: AreaPageProps) {
         </div>
       </section>
 
+      {/* Area map */}
+      <section className="py-12 bg-slate-50" aria-label={`Map of ${area.name} roofing coverage`}>
+        <div className="container-xl">
+          <h2 className="text-xl font-bold text-brand-navy mb-5">
+            Our Coverage in {area.name}
+          </h2>
+          <div className="rounded-2xl overflow-hidden shadow-card border border-slate-200">
+            <iframe
+              src={`https://maps.google.com/maps?q=${area.geo.lat},${area.geo.lng}&z=14&output=embed`}
+              width="100%"
+              height="360"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title={`Sefton Roofing coverage area — ${area.name}, ${area.county}`}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Nearby areas */}
-      <section className="py-12 bg-slate-50">
+      <section className="py-12 bg-white">
         <div className="container-xl">
           <h2 className="text-xl font-bold text-brand-navy mb-5">
             We Also Cover Nearby Areas

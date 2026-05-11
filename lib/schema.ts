@@ -22,6 +22,7 @@ export function generateLocalBusinessSchema() {
     description: SITE.description,
     telephone: SITE.phone,
     email: SITE.email,
+    hasMap: `https://www.google.com/maps/search/?api=1&query=Sefton+Roofing+Waterloo+Liverpool`,
     address: {
       "@type": "PostalAddress",
       streetAddress: SITE.address.street,
@@ -35,8 +36,18 @@ export function generateLocalBusinessSchema() {
       latitude: SITE.geo.lat,
       longitude: SITE.geo.lng,
     },
+    serviceArea: {
+      "@type": "GeoCircle",
+      geoMidpoint: {
+        "@type": "GeoCoordinates",
+        latitude: SITE.geo.lat,
+        longitude: SITE.geo.lng,
+      },
+      geoRadius: "30000",
+    },
     areaServed: [
-      { "@type": "City", name: "Liverpool" },
+      { "@type": "City", name: "Liverpool", sameAs: "https://en.wikipedia.org/wiki/Liverpool" },
+      { "@type": "AdministrativeArea", name: "Merseyside" },
       { "@type": "Place", name: "Waterloo" },
       { "@type": "Place", name: "Crosby" },
       { "@type": "Place", name: "Bootle" },
@@ -49,7 +60,40 @@ export function generateLocalBusinessSchema() {
       { "@type": "Place", name: "Maghull" },
       { "@type": "Place", name: "Huyton" },
       { "@type": "Place", name: "Knowsley" },
+      { "@type": "Place", name: "Kirkdale" },
+      { "@type": "Place", name: "Litherland" },
+      { "@type": "Place", name: "Prescot" },
+      { "@type": "Place", name: "Ormskirk" },
+      { "@type": "Place", name: "Fazakerley" },
     ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: SITE.phone,
+      contactType: "customer service",
+      areaServed: "GB",
+      availableLanguage: "English",
+      hoursAvailable: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "07:00",
+          closes: "18:00",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: "Saturday",
+          opens: "07:00",
+          closes: "14:00",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          name: "Emergency Line",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          opens: "00:00",
+          closes: "23:59",
+        },
+      ],
+    },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -69,6 +113,22 @@ export function generateLocalBusinessSchema() {
     currenciesAccepted: "GBP",
     foundingDate: SITE.founded,
     numberOfEmployees: { "@type": "QuantitativeValue", value: 12 },
+    knowsAbout: [
+      "Roof Repairs Liverpool",
+      "Emergency Roof Repairs",
+      "Flat Roof Repairs",
+      "Roof Cleaning Liverpool",
+      "Moss Removal",
+      "Soft Washing",
+      "Gutter Cleaning Liverpool",
+      "Gutter Repairs",
+      "Fascias and Soffits",
+      "Leadwork",
+      "Brickwork and Repointing",
+      "Property Maintenance Liverpool",
+      "Slate Roof Cleaning",
+      "Commercial Roof Cleaning",
+    ],
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: SITE.rating,
@@ -131,7 +191,10 @@ export function generateServiceSchema(service: {
     name: service.name,
     description: service.description,
     provider: { "@id": `${SITE.url}/#organization` },
-    areaServed: { "@type": "City", name: "Liverpool" },
+    areaServed: [
+      { "@type": "City", name: "Liverpool" },
+      { "@type": "AdministrativeArea", name: "Merseyside" },
+    ],
     url: `${SITE.url}/services/${service.slug}`,
     ...(service.price
       ? {
@@ -143,6 +206,111 @@ export function generateServiceSchema(service: {
           },
         }
       : {}),
+  };
+}
+
+export function generateHowToSchema(
+  serviceName: string,
+  serviceSlug: string,
+  steps: { step: number; title: string; description: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "@id": `${SITE.url}/services/${serviceSlug}/#howto`,
+    name: `How We Carry Out ${serviceName} in Liverpool`,
+    description: `Our step-by-step ${serviceName} process for Liverpool and Merseyside homeowners`,
+    provider: { "@id": `${SITE.url}/#organization` },
+    step: steps.map((s) => ({
+      "@type": "HowToStep",
+      position: s.step,
+      name: s.title,
+      text: s.description,
+    })),
+  };
+}
+
+export function generateAreaPageSchema(area: {
+  name: string;
+  slug: string;
+  county: string;
+  postcode: string;
+  description: string;
+  geo: { lat: number; lng: number };
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "RoofingContractor"],
+    "@id": `${SITE.url}/areas/${area.slug}/#localbusiness`,
+    name: `${SITE.shortName} — ${area.name}`,
+    description: area.description,
+    url: `${SITE.url}/areas/${area.slug}`,
+    telephone: SITE.phone,
+    email: SITE.email,
+    hasMap: `https://www.google.com/maps/search/?api=1&query=Sefton+Roofing+${encodeURIComponent(area.name)}`,
+    image: `${SITE.url}/images/hero-roofing.jpg`,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: area.name,
+      addressRegion: area.county,
+      postalCode: area.postcode,
+      addressCountry: "GB",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: area.geo.lat,
+      longitude: area.geo.lng,
+    },
+    areaServed: {
+      "@type": "Place",
+      name: area.name,
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: area.geo.lat,
+        longitude: area.geo.lng,
+      },
+    },
+    parentOrganization: { "@id": `${SITE.url}/#organization` },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: SITE.rating,
+      reviewCount: SITE.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "07:00",
+        closes: "18:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Saturday",
+        opens: "07:00",
+        closes: "14:00",
+      },
+    ],
+    priceRange: "££",
+  };
+}
+
+export function generateItemListSchema(
+  items: { name: string; url: string }[],
+  listName: string
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: listName,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      url: item.url,
+    })),
   };
 }
 
