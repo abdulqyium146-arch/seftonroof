@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       tags: post.tags,
       images: [
         {
-          url: `${SITE.url}/og-image.jpg`,
+          url: `${SITE.url}/logo.webp`,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      images: [`${SITE.url}/og-image.jpg`],
+      images: [`${SITE.url}/logo.webp`],
     },
     alternates: { canonical: `${SITE.url}/blog/${slug}` },
   };
@@ -79,7 +79,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     description: post.excerpt,
     image: {
       "@type": "ImageObject",
-      url: `${SITE.url}/og-image.jpg`,
+      url: `${SITE.url}/logo.webp`,
       width: 1200,
       height: 630,
     },
@@ -96,7 +96,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       url: SITE.url,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE.url}/logo.png`,
+        url: `${SITE.url}/logo.webp`,
         width: 400,
         height: 120,
       },

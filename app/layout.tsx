@@ -33,6 +33,21 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      { rel: "android-chrome-icon", url: "/android-chrome-192x192.png" },
+      { rel: "android-chrome-icon", url: "/android-chrome-512x512.png" },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
@@ -48,11 +63,13 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE.name,
     locale: "en_GB",
+    // og:image is auto-injected from app/opengraph-image.tsx (1200×630 branded card).
+    // logo.webp is listed as a secondary fallback for crawlers that don't support dynamic images.
     images: [
       {
-        url: `${SITE.url}/og-image.jpg`,
-        width: 1200,
-        height: 630,
+        url: `${SITE.url}/logo.webp`,
+        width: 1275,
+        height: 638,
         alt: `${SITE.name} — Liverpool's Trusted Roofing Specialists`,
       },
     ],
@@ -61,6 +78,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@seftonroofing",
     creator: "@seftonroofing",
+    images: [`${SITE.url}/logo.webp`],
   },
   verification: {
     google: "789bd5951d6ca0e9",

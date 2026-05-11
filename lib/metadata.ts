@@ -33,7 +33,7 @@ export function generateMetadata({
     "Expert roofing repairs, roof cleaning, gutter services and property maintenance across Liverpool and Merseyside. Free quotes, 24/7 emergency response.";
 
   const pageUrl = `${SITE.url}${path}`;
-  const ogImage = image || `${SITE.url}/og-image.jpg`;
+  const ogImage = image || `${SITE.url}/logo.webp`;
 
   const baseKeywords = [
     "roofing Liverpool",

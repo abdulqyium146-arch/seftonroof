@@ -6,6 +6,7 @@ import { Services } from "@/components/sections/Services";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { Process } from "@/components/sections/Process";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { WorkGallery } from "@/components/sections/WorkGallery";
 import { ServiceAreas } from "@/components/sections/ServiceAreas";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description:
       "Expert roofing services across Liverpool and Merseyside. Free quotes, 24/7 emergency response, 10-year guarantee.",
     url: SITE.url,
-    images: [{ url: `${SITE.url}/og-image.jpg`, width: 1200, height: 630 }],
+    images: [{ url: `${SITE.url}/logo.webp`, width: 1200, height: 630 }],
   },
   alternates: {
     canonical: SITE.url,
@@ -58,7 +59,10 @@ export default function HomePage() {
       {/* 7. Testimonials */}
       <Testimonials />
 
-      {/* 8. Service areas */}
+      {/* 8. Real project work gallery */}
+      <WorkGallery />
+
+      {/* 9. Service areas */}
       <ServiceAreas />
 
       {/* 9. Liverpool coverage map */}

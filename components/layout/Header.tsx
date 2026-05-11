@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Phone, Menu, X, ChevronDown, AlertTriangle } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -68,22 +69,17 @@ export function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-3 group flex-shrink-0"
-              aria-label="Sefton Roofing - Home"
+              className="flex-shrink-0 group"
+              aria-label="Sefton Roofing & Property Maintenance — Home"
             >
-              <div className="w-10 h-10 bg-brand-orange rounded-xl flex items-center justify-center group-hover:bg-brand-orange-dark transition-colors">
-                <svg viewBox="0 0 40 40" className="w-6 h-6 fill-white" aria-hidden="true">
-                  <path d="M20 4L2 18h4v18h10V24h8v12h10V18h4L20 4z" />
-                </svg>
-              </div>
-              <div className="hidden xs:block">
-                <div className="text-white font-bold text-base leading-tight">
-                  Sefton Roofing
-                </div>
-                <div className="text-brand-orange text-xs font-medium">
-                  Liverpool&apos;s Trusted Roofers
-                </div>
-              </div>
+              <Image
+                src="/logo.webp"
+                alt="Sefton Roofing & Property Maintenance — Liverpool's Trusted Roofers"
+                width={140}
+                height={70}
+                priority
+                className="h-12 w-auto rounded-lg group-hover:opacity-90 transition-opacity sm:h-14"
+              />
             </Link>
 
             {/* Desktop Nav */}
