@@ -61,7 +61,6 @@ const nextConfig: NextConfig = {
         source: "/sitemap.xml",
         headers: [
           { key: "Cache-Control", value: "public, max-age=3600, stale-while-revalidate=86400" },
-          { key: "Content-Type", value: "application/xml; charset=utf-8" },
         ],
       },
       {
