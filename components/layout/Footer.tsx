@@ -159,6 +159,7 @@ export function Footer() {
                 { label: "FAQs", href: "/faq" },
                 { label: "Contact", href: "/contact" },
                 { label: "Get a Free Quote", href: "/contact" },
+                { label: "Exterior Cleaning Guide", href: "/blog/exterior-cleaning-newton-le-willows-guide" },
               ].map((link) => (
                 <li key={link.href + link.label}>
                   <Link

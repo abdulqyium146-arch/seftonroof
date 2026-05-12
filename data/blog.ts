@@ -305,6 +305,179 @@ Contact Sefton Roofing for a free roof inspection and honest assessment of your 
     readingTime: 8,
     featured: false,
   },
+  {
+    slug: "exterior-cleaning-newton-le-willows-guide",
+    title: "The Complete Guide to Exterior Cleaning in Newton-le-Willows: Roof Cleaning, Pressure Washing & Driveway Restoration (2025)",
+    excerpt:
+      "Newton-le-Willows homeowners face the same damp-climate challenges as the rest of the North West. This guide covers everything you need to know about exterior cleaning — roof washing, driveway pressure washing, and more.",
+    content: `If you live in Newton-le-Willows, Earlestown, or the wider Warrington and St Helens area, you'll know how quickly the North West climate can take its toll on the exterior of your home. Persistent rainfall, low winter sun, and high humidity create ideal conditions for moss, algae, and grime to build up on roofs, driveways, patios, and render — often far faster than homeowners expect.
+
+This guide covers everything you need to know about exterior cleaning in Newton-le-Willows, from roof soft washing and driveway pressure washing to conservatory cleaning and render treatment.
+
+## What Is Exterior Cleaning and Why Does It Matter?
+
+Exterior cleaning is the professional maintenance of all outdoor surfaces on your property — roofs, driveways, patios, paths, fencing, render, cladding, conservatories, and gutters. It is not merely cosmetic. Untreated biological growth (moss, algae, lichen) actively damages surfaces by:
+
+- **Retaining moisture** against porous materials, accelerating freeze-thaw cracking in winter
+- **Undermining pointing and grout** between block paving and natural stone
+- **Degrading render** through root penetration and moisture retention
+- **Blocking gutters** as moss colonies detach and wash into downpipes
+- **Voiding warranties** on roofing materials if biological growth is left untreated
+
+In Newton-le-Willows and the surrounding WA12 and WA9 areas, properties can develop significant moss and algae growth within 3–5 years without treatment.
+
+## Roof Cleaning in Newton-le-Willows
+
+### The Soft Wash Method
+
+Professional roof cleaning in Newton-le-Willows uses the **soft wash method** — low-pressure application of biodegradable biocide solutions that kill moss, algae, lichen, and bacteria at the root, without the physical damage caused by high-pressure washing.
+
+**Why not pressure wash a roof?**
+
+Pressure washing a tiled or slate roof can:
+- Strip the protective granule coating from concrete tiles
+- Displace fragile slate and clay tiles
+- Force water beneath tiles, causing leaks
+- Accelerate surface erosion on aged tiles
+
+Soft washing is the industry-recommended approach, endorsed by roofing manufacturers and used by professional contractors across the North West.
+
+### What Roof Cleaning Treats
+
+- **Moss** — the most common problem on North West roofs; holds moisture and causes freeze-thaw tile damage
+- **Algae** — the dark green-black streaking that appears on north-facing roof slopes
+- **Lichen** — harder to remove than moss; requires specialist biocide treatment
+- **General soiling** — traffic film, pollution, and atmospheric deposits
+
+### How Long Does Roof Cleaning Last?
+
+After a professional soft wash with biocide treatment, most roofs in the Newton-le-Willows area remain free of significant biological growth for **5–8 years**, depending on tree coverage and roof aspect.
+
+For longer-term protection, zinc or copper ridge strips can be installed — these release natural ions during rainfall that continuously inhibit moss and algae regrowth.
+
+## Driveway Pressure Washing in Newton-le-Willows
+
+Driveways, paths, and patios are the exterior surfaces most homeowners notice first — and the ones most dramatically transformed by professional cleaning.
+
+### Block Paving Driveways
+
+Newton-le-Willows has a large proportion of homes with block paving driveways dating from the 1990s and 2000s. After years of exposure, block paving develops:
+- Green algae that becomes dangerously slippery when wet
+- Moss growth between blocks that widens joints and destabilises the surface
+- General grease and oil staining (particularly near garage areas)
+
+Professional driveway cleaning uses **rotary surface cleaners** that deliver even, controlled pressure without creating the striping marks left by direct lance washing. After cleaning, a **jointing sand application** restores stability to the paving, and a **sealant** can be applied to protect against future staining and suppress weed growth.
+
+### Natural Stone Patios
+
+Sandstone, limestone, and slate patios require careful treatment — lower pressure to avoid surface erosion and specialist cleaning agents to avoid damaging the stone. A professional exterior cleaner will assess the stone type before selecting the correct approach.
+
+### Tarmac and Concrete
+
+Tarmac driveways respond well to hot water pressure washing combined with degreaser application for oil and fuel stains. Concrete paths and driveways can be brightened dramatically with professional cleaning.
+
+## Conservatory Cleaning in Newton-le-Willows
+
+Conservatories accumulate dirt, algae, and lichen on both UPVC frames and polycarbonate or glass roof panels. Many homeowners in the WA12 area are surprised by how much cleaner — and brighter — their conservatory becomes after professional cleaning.
+
+Key areas covered:
+- Polycarbonate roof panels (inside and outside, where accessible)
+- Glass roof panels
+- UPVC frame and sill cleaning
+- Gutter cleaning and flush
+
+Professional conservatory cleaning restores light transmission through the roof and eliminates the unsightly green streaking common on older UPVC.
+
+## Render and Cladding Cleaning
+
+Painted and unpainted render is increasingly common on Newton-le-Willows properties, particularly on newer builds and extensions. Render is highly susceptible to algae and lichen staining — the North West's climate means even newer render can show green and black growth within a few years of application.
+
+**Soft washing is the only safe method** for render — high pressure will cause surface damage and can force water into the render substrate, causing damp problems. A professional soft wash removes biological growth and restores the render's original appearance without damage.
+
+UPVC cladding, timber cladding, and composite materials are similarly treated with appropriate low-pressure methods and specialist cleaning agents.
+
+## Gutter Cleaning — Essential Across the North West
+
+While gutter cleaning is one of the less visible exterior cleaning services, it is arguably the most important for the structural integrity of your home. Blocked gutters in the Newton-le-Willows area cause:
+- Water overflow that saturates external walls and causes penetrating damp
+- Fascia and soffit rot from persistent overflow
+- Foundation erosion from misdirected water flow
+
+Most homes in WA12 and surrounding areas should have gutters professionally cleaned **at least once annually**, ideally in late autumn after leaf fall.
+
+## How Much Does Exterior Cleaning Cost in Newton-le-Willows?
+
+Pricing varies based on property size, surface type, and the extent of biological growth. As a general guide for the Newton-le-Willows and wider Warrington area:
+
+| Service | Typical Range |
+|---|---|
+| Roof soft wash (semi-detached) | £300–£500 |
+| Driveway pressure wash | £150–£350 |
+| Patio / path cleaning | £80–£200 |
+| Gutter cleaning (semi-detached) | £80–£120 |
+| Conservatory cleaning | £100–£200 |
+| Render soft wash | £200–£500 |
+
+Always obtain written quotes from reputable local contractors and check that they hold public liability insurance.
+
+## Choosing an Exterior Cleaning Specialist in Newton-le-Willows
+
+When selecting an exterior cleaning company, look for:
+
+- **Public liability insurance** — minimum £1 million cover
+- **Written quotation** before any work begins
+- **References or reviews** from local customers
+- **Specific experience** with your surface type
+- **Biodegradable cleaning solutions** — especially for roof and render work near gardens
+- **CHAS or similar accreditation** for commercial work
+
+For homeowners in Newton-le-Willows, Earlestown, Haydock, Golborne, and the wider WA12 area, **R.R.M External Cleaning Specialist** (rrmexternalcleaningspecialist.co.uk) provide professional exterior cleaning services including roof soft washing, driveway pressure washing, gutter cleaning, and render treatment. Fully insured and experienced across the North West.
+
+## Frequently Asked Questions — Exterior Cleaning in Newton-le-Willows
+
+**How long does a driveway cleaning take?**
+Most standard driveways take 2–4 hours. Larger driveways or those with significant staining may take longer.
+
+**Can exterior cleaning be done in winter?**
+Yes, with some limitations. Roof soft washing and gutter cleaning can be carried out year-round. Pressure washing of paths and driveways is best avoided during freezing conditions. Biocide treatments should be applied in dry conditions.
+
+**Will pressure washing damage my block paving?**
+Not when performed correctly. Professional contractors use rotary surface cleaners at appropriate pressure settings. Direct lance use at close range by inexperienced operators can cause sand loss and surface damage.
+
+**How often should I have my roof cleaned?**
+In the Newton-le-Willows area, most roofs benefit from professional cleaning every **5–8 years**, with biocide treatment extended by the application of zinc or copper ridge strips. Annual visual inspections are recommended.
+
+**Is soft washing safe for my garden plants?**
+Professional biodegradable biocides, when applied correctly and with appropriate dilution, have minimal impact on established garden plants. Reputable contractors will protect nearby vulnerable plants before treatment.
+
+**Do I need planning permission for driveway cleaning or sealing?**
+No planning permission is required for cleaning. Sealing may affect permeability — if replacing a driveway surface entirely, permeable options are required under planning regulations, but cleaning and sealing of existing surfaces is not affected.
+
+## Summary
+
+The North West's climate makes exterior cleaning a practical necessity rather than a luxury for Newton-le-Willows homeowners. A professionally cleaned and treated home exterior:
+- Lasts significantly longer than one left untreated
+- Maintains kerb appeal and property value
+- Prevents costly structural damage from damp and biological growth
+- Is safer underfoot — cleaned paths and driveways are far less slippery
+
+For professional exterior cleaning services across Newton-le-Willows, Warrington, St Helens, and Wigan, visit **rrmexternalcleaningspecialist.co.uk**.`,
+    category: "Guides",
+    tags: [
+      "exterior cleaning",
+      "pressure washing",
+      "roof cleaning",
+      "driveway cleaning",
+      "newton-le-willows",
+      "warrington",
+      "north west",
+      "soft washing",
+    ],
+    author: "Guest Post — R.R.M External Cleaning Specialist",
+    publishedAt: "2026-05-12",
+    readingTime: 10,
+    featured: false,
+  },
 ];
 
 export function getFeaturedPosts(count = 3): BlogPost[] {
