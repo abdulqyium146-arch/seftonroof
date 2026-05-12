@@ -7,9 +7,9 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Liverpool Roofing Blog — Expert Tips & Guides",
+  title: "Liverpool Roofing Blog 2026 — Expert Tips, Guides & Advice",
   description:
-    "Expert roofing advice, tips and guides for Liverpool homeowners from Sefton Roofing. Learn how to spot roof damage, when to call a roofer, and how to maintain your Liverpool roof.",
+    "2026 roofing guides for Liverpool homeowners from Sefton Roofing. Learn how to spot roof damage, when to call a roofer, gutter cleaning frequency, moss removal, and how to maintain your Liverpool roof in 2026.",
   alternates: { canonical: `${SITE.url}/blog` },
 };
 
@@ -27,11 +27,11 @@ export default function BlogPage() {
             <div className="badge-orange mb-4 w-fit">Liverpool Roofing Blog</div>
             <h1 className="text-4xl sm:text-5xl font-black text-white mb-4">
               Expert Roofing Advice{" "}
-              <span className="text-gradient-orange">for Liverpool Homeowners</span>
+              <span className="text-gradient-orange">for Liverpool Homeowners — 2026</span>
             </h1>
             <p className="text-slate-300 text-lg leading-relaxed">
-              Practical roofing tips, seasonal maintenance guides, and expert insight
-              from Liverpool&apos;s most trusted roofing team.
+              2026 roofing guides — practical tips, seasonal maintenance advice, and expert insight
+              from Liverpool&apos;s most trusted roofing team. All guides updated for 2026.
             </p>
           </div>
         </div>

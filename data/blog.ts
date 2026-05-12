@@ -14,10 +14,10 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "signs-your-liverpool-roof-needs-repair",
-    title: "7 Warning Signs Your Liverpool Roof Needs Urgent Repair",
+    title: "7 Warning Signs Your Liverpool Roof Needs Urgent Repair (2026)",
     excerpt:
-      "Liverpool's Atlantic weather is unforgiving on roofs. Learn the critical warning signs every homeowner should know — before a small problem becomes a costly emergency.",
-    content: `Liverpool's climate is one of the most challenging in England for roofs. High annual rainfall, persistent westerly winds, and frequent freeze-thaw cycles in winter all take their toll on even well-maintained roofing. Understanding the warning signs of a roof in trouble can save you thousands of pounds in avoidable damage.
+      "Updated for 2026 — Liverpool's Atlantic weather is unforgiving on roofs. Learn the critical warning signs every homeowner must know this year before a small problem becomes a costly emergency.",
+    content: `Updated for 2026. Liverpool's climate remains one of the most challenging in England for roofs — and with the run of wet winters seen across Merseyside, more homeowners than ever are discovering roof problems they didn't know they had. High annual rainfall, persistent westerly winds, and frequent freeze-thaw cycles all take their toll on even well-maintained roofing. Here are the 7 warning signs to watch for in 2026.
 
 ## 1. Water Stains on Ceilings or Walls
 
@@ -49,18 +49,18 @@ A visibly sagging or bowed roofline indicates potential structural problems — 
 
 If you notice any of these signs, contact Sefton Roofing for a free inspection. We serve all of Liverpool, Waterloo, Crosby, Bootle, and surrounding areas — and for emergencies, we're available 24/7.`,
     category: "Roof Maintenance",
-    tags: ["roof repairs", "liverpool roofing", "warning signs", "roof maintenance"],
+    tags: ["roof repairs", "liverpool roofing", "warning signs", "roof maintenance", "2026"],
     author: "Sefton Roofing Team",
-    publishedAt: "2024-10-15",
+    publishedAt: "2026-01-15",
     readingTime: 5,
     featured: true,
   },
   {
     slug: "how-often-should-gutters-be-cleaned-liverpool",
-    title: "How Often Should Liverpool Homeowners Clean Their Gutters?",
+    title: "How Often Should Liverpool Homeowners Clean Their Gutters? (2026 Guide)",
     excerpt:
-      "Liverpool's wet climate and tree coverage means gutters need cleaning more frequently than many homeowners realise. Here's the definitive guide to gutter maintenance in Merseyside.",
-    content: `Gutter cleaning is one of the most important — and most overlooked — elements of home maintenance in Liverpool. Unlike warmer, drier parts of the UK, Liverpool's climate means gutters accumulate debris faster and the consequences of neglect are more severe.
+      "2026 update — Liverpool's wet climate and dense tree cover mean gutters block faster here than almost anywhere in England. This is the definitive guide to gutter cleaning frequency for Merseyside homeowners.",
+    content: `2026 guide — updated with current pricing and recommendations. Gutter cleaning is one of the most important — and most overlooked — elements of home maintenance in Liverpool. Unlike warmer, drier parts of the UK, Liverpool's climate means gutters accumulate debris faster and the consequences of neglect are more severe. In 2026, with repair costs rising, staying ahead of blockages has never been better value.
 
 ## Why Liverpool Gutters Need Cleaning More Often
 
@@ -107,18 +107,18 @@ While it's possible to clean gutters yourself, we strongly recommend professiona
 
 Sefton Roofing offers professional gutter cleaning across all of Liverpool and Merseyside. Call us on 07971 321313 for a free quote.`,
     category: "Guttering",
-    tags: ["gutter cleaning", "liverpool gutters", "home maintenance", "blocked gutters"],
+    tags: ["gutter cleaning", "liverpool gutters", "home maintenance", "blocked gutters", "2026"],
     author: "Sefton Roofing Team",
-    publishedAt: "2024-09-20",
+    publishedAt: "2026-02-10",
     readingTime: 6,
     featured: true,
   },
   {
     slug: "moss-on-roof-tiles-liverpool-guide",
-    title: "Moss on Roof Tiles in Liverpool: Complete Homeowner's Guide",
+    title: "Moss on Roof Tiles in Liverpool: Complete Homeowner's Guide (2026)",
     excerpt:
-      "Moss grows faster on Liverpool roofs than almost anywhere else in England. Understand why, what damage it causes, and how to safely remove it and stop it coming back.",
-    content: `If you've noticed a green tinge spreading across your roof tiles, you're not alone. Moss is one of the most common roofing problems in Liverpool and Merseyside, and the region's climate makes it particularly prolific.
+      "2026 — Moss grows faster on Liverpool roofs than almost anywhere in England. Understand why it grows, the damage it causes, and how to safely remove it and stop it returning this year.",
+    content: `Updated for 2026. If you've noticed a green tinge spreading across your roof tiles, you're not alone — moss complaints are one of the most common calls we receive across Liverpool and Merseyside every spring. The region's climate makes roof moss particularly prolific, and 2026 has been no exception after another wet winter across Merseyside.
 
 ## Why Does Liverpool Have So Much Roof Moss?
 
@@ -165,18 +165,18 @@ The most effective long-term prevention combines:
 
 Sefton Roofing provides complete moss removal services across all of Liverpool and Merseyside. Contact us for a free assessment.`,
     category: "Roof Cleaning",
-    tags: ["roof moss", "moss removal", "liverpool roof cleaning", "moss treatment"],
+    tags: ["roof moss", "moss removal", "liverpool roof cleaning", "moss treatment", "2026"],
     author: "Sefton Roofing Team",
-    publishedAt: "2024-08-10",
+    publishedAt: "2026-03-05",
     readingTime: 7,
     featured: false,
   },
   {
     slug: "emergency-roof-repair-what-to-do",
-    title: "Emergency Roof Damage in Liverpool: What to Do Right Now",
+    title: "Emergency Roof Damage in Liverpool: What to Do Right Now (2026)",
     excerpt:
-      "Storm damage, sudden leaks, or structural failure — what should Liverpool homeowners do in the first critical minutes and hours? A step-by-step emergency guide.",
-    content: `A roofing emergency is one of the most stressful situations a Liverpool homeowner can face. Whether it's a midnight storm, a sudden ceiling collapse, or tiles crashing into your garden, knowing what to do in the critical first moments makes a significant difference to the outcome.
+      "2026 guide — storm damage, sudden leaks, or structural failure — what Liverpool homeowners should do in the critical first minutes. Step-by-step emergency guidance, including 2026 insurance claim tips.",
+    content: `2026 guide — updated with current emergency response advice. A roofing emergency is one of the most stressful situations a Liverpool homeowner can face. Whether it's a midnight storm, a sudden ceiling collapse, or tiles crashing into your garden, knowing what to do in the critical first moments makes a significant difference to the outcome. In 2026, with storm activity across the North West remaining elevated, this guide is more important than ever.
 
 ## Step 1: Stay Safe
 
@@ -235,18 +235,18 @@ Our emergency team will:
 
 Do not wait with a roofing emergency. Call us immediately on 07971 321313.`,
     category: "Emergency",
-    tags: ["emergency roofing", "storm damage", "roof emergency liverpool", "urgent roof repair"],
+    tags: ["emergency roofing", "storm damage", "roof emergency liverpool", "urgent roof repair", "2026"],
     author: "Sefton Roofing Team",
-    publishedAt: "2024-07-05",
+    publishedAt: "2026-03-22",
     readingTime: 6,
     featured: true,
   },
   {
     slug: "how-long-do-different-roofs-last-uk",
-    title: "How Long Do Different Types of Roofs Last in Liverpool?",
+    title: "How Long Do Different Types of Roofs Last in Liverpool? (2026)",
     excerpt:
-      "Natural slate, concrete tiles, clay tiles, flat felt — every roof type has a different lifespan. Liverpool's climate means all roofs age faster. Find out what to expect.",
-    content: `Understanding how long your roof should last is important for budgeting, planning maintenance, and knowing when repair is more sensible than replacement. Liverpool's demanding climate — high rainfall, coastal exposure in many areas, and significant temperature variation — means roofs here age somewhat faster than in drier parts of the UK.
+      "2026 — natural slate, concrete tiles, clay tiles, flat EPDM — every roof type has a different lifespan. Liverpool's climate ages roofs faster than most of the UK. Find out what to expect in 2026 and when to repair vs. replace.",
+    content: `Updated for 2026. Understanding how long your roof should last is important for budgeting, planning maintenance, and knowing when repair is more sensible than replacement. In 2026, with roofing material costs having stabilised after several years of post-pandemic inflation, now is an excellent time to assess your roof's remaining life. Liverpool's demanding climate — high rainfall, coastal exposure in many areas, and significant temperature variation — means roofs here age somewhat faster than in drier parts of the UK.
 
 ## Natural Welsh Slate
 
@@ -299,15 +299,15 @@ Regardless of roof type, the following practices extend lifespan significantly:
 
 Contact Sefton Roofing for a free roof inspection and honest assessment of your roof's current condition and expected remaining lifespan.`,
     category: "Guides",
-    tags: ["roof lifespan", "slate roof", "concrete tiles", "flat roof", "roof types"],
+    tags: ["roof lifespan", "slate roof", "concrete tiles", "flat roof", "roof types", "2026"],
     author: "Sefton Roofing Team",
-    publishedAt: "2024-06-18",
+    publishedAt: "2026-04-14",
     readingTime: 8,
     featured: false,
   },
   {
     slug: "exterior-cleaning-newton-le-willows-guide",
-    title: "The Complete Guide to Exterior Cleaning in Newton-le-Willows: Roof Cleaning, Pressure Washing & Driveway Restoration (2025)",
+    title: "The Complete Guide to Exterior Cleaning in Newton-le-Willows: Roof Cleaning, Pressure Washing & Driveway Restoration (2026)",
     excerpt:
       "Newton-le-Willows homeowners face the same damp-climate challenges as the rest of the North West. This guide covers everything you need to know about exterior cleaning — roof washing, driveway pressure washing, and more.",
     content: `If you live in Newton-le-Willows, Earlestown, or the wider Warrington and St Helens area, you'll know how quickly the North West climate can take its toll on the exterior of your home. Persistent rainfall, low winter sun, and high humidity create ideal conditions for moss, algae, and grime to build up on roofs, driveways, patios, and render — often far faster than homeowners expect.
