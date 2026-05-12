@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, Star, Shield, Award, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Star, Shield, Award, CheckCircle, BookOpen } from "lucide-react";
 import { SITE } from "@/lib/constants";
 import { services } from "@/data/services";
 import { areas } from "@/data/areas";
@@ -171,6 +171,28 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+
+            {/* Featured Guide card */}
+            <div className="bg-white/5 border border-white/10 rounded-xl p-4 mb-4">
+              <div className="flex items-center gap-2 mb-2">
+                <BookOpen className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                <p className="text-slate-300 font-semibold text-xs uppercase tracking-wider">Featured Guide — 2026</p>
+              </div>
+              <p className="text-white font-semibold text-sm leading-snug mb-2">
+                Exterior Cleaning in Newton-le-Willows: Complete 2026 Guide
+              </p>
+              <p className="text-slate-400 text-xs mb-3 leading-relaxed">
+                Roof soft washing, driveway pressure washing &amp; render cleaning — everything North West homeowners need to know.
+              </p>
+              <a
+                href="https://seftonroof.vercel.app/blog/exterior-cleaning-newton-le-willows-guide"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center bg-brand-orange hover:bg-brand-orange-dark text-white font-bold py-2 px-4 rounded-lg text-xs transition-colors"
+              >
+                Read the Full Guide →
+              </a>
+            </div>
 
             {/* Emergency CTA box */}
             <div className="bg-brand-red/20 border border-brand-red/30 rounded-xl p-4">

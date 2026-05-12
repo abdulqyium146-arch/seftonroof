@@ -97,16 +97,41 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     .filter((p) => p.slug !== post.slug && p.category === post.category)
     .slice(0, 3);
 
+  const pageUrl = `${SITE.url}/blog/${slug}`;
+
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: SITE.url },
     { name: "Blog", url: `${SITE.url}/blog` },
-    { name: post.title, url: `${SITE.url}/blog/${slug}` },
+    { name: post.title, url: pageUrl },
   ]);
 
+  // 1. WebPage — signals freshness via datePublished/dateModified; isPartOf links to WebSite entity
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": pageUrl,
+    url: pageUrl,
+    name: post.title,
+    description: post.excerpt,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    inLanguage: "en-GB",
+    isPartOf: { "@id": `${SITE.url}/#website` },
+    breadcrumb: { "@id": `${pageUrl}/#breadcrumb` },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `${SITE.url}/logo.webp`,
+      width: 1200,
+      height: 630,
+    },
+  };
+
+  // 2. Article — enhanced with wordCount, about (topic entities), mentions (RRM for guest post)
+  const isGuestPost = post.author.includes("Guest Post");
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "@id": `${SITE.url}/blog/${slug}/#article`,
+    "@id": `${pageUrl}/#article`,
     headline: post.title,
     description: post.excerpt,
     image: {
@@ -115,12 +140,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       width: 1200,
       height: 630,
     },
-    author: {
-      "@type": "Organization",
-      "@id": `${SITE.url}/#organization`,
-      name: SITE.name,
-      url: SITE.url,
-    },
+    author: isGuestPost
+      ? {
+          "@type": "Organization",
+          name: "R.R.M External Cleaning Specialist",
+          url: "https://rrmexternalcleaningspecialist.co.uk",
+        }
+      : {
+          "@type": "Organization",
+          "@id": `${SITE.url}/#organization`,
+          name: SITE.name,
+          url: SITE.url,
+        },
     publisher: {
       "@type": "Organization",
       "@id": `${SITE.url}/#organization`,
@@ -135,26 +166,75 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     },
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `${SITE.url}/blog/${slug}`,
-    },
+    mainEntityOfPage: { "@id": pageUrl },
     keywords: post.tags.join(", "),
+    ...(post.wordCount ? { wordCount: post.wordCount } : {}),
     articleSection: post.category,
     inLanguage: "en-GB",
-    about: { "@id": `${SITE.url}/#organization` },
+    about: isGuestPost
+      ? [
+          { "@type": "Thing", name: "Exterior Cleaning", sameAs: "https://en.wikipedia.org/wiki/Pressure_washing" },
+          { "@type": "City", name: "Newton-le-Willows", containedInPlace: { "@type": "AdministrativeArea", name: "Merseyside" } },
+          { "@type": "City", name: "Warrington" },
+        ]
+      : [{ "@id": `${SITE.url}/#organization` }],
+    ...(isGuestPost
+      ? {
+          mentions: [
+            {
+              "@type": "LocalBusiness",
+              name: "R.R.M External Cleaning Specialist",
+              url: "https://rrmexternalcleaningspecialist.co.uk",
+              areaServed: [
+                { "@type": "City", name: "Newton-le-Willows" },
+                { "@type": "City", name: "Warrington" },
+                { "@type": "City", name: "St Helens" },
+              ],
+            },
+          ],
+        }
+      : {}),
     speakable: {
       "@type": "SpeakableSpecification",
       cssSelector: ["h1", ".article-excerpt"],
     },
   };
 
+  // 3. FAQPage — generated from post.faqs; triggers rich snippet and forces re-crawl priority
+  const faqSchema = post.faqs && post.faqs.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": `${pageUrl}/#faq`,
+        mainEntity: post.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      }
+    : null;
+
+  // 4. SpeakableSpecification — standalone block for AEO/voice search engines
+  const speakableSchema = {
+    "@context": "https://schema.org",
+    "@type": "SpeakableSpecification",
+    "@id": `${pageUrl}/#speakable`,
+    cssSelector: ["h1", ".article-excerpt", "h2"],
+    url: pageUrl,
+  };
+
   const contentSections = post.content.split("\n\n").filter(Boolean);
 
   return (
     <>
+      <SchemaOrg schema={webPageSchema} />
       <SchemaOrg schema={articleSchema} />
       <SchemaOrg schema={breadcrumbSchema} />
+      <SchemaOrg schema={speakableSchema} />
+      {faqSchema && <SchemaOrg schema={faqSchema} />}
 
       {/* Hero */}
       <section className="bg-brand-navy py-16">

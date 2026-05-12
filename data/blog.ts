@@ -9,6 +9,8 @@ export interface BlogPost {
   publishedAt: string;
   readingTime: number;
   featured: boolean;
+  faqs?: { question: string; answer: string }[];
+  wordCount?: number;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -477,6 +479,33 @@ For professional exterior cleaning services across Newton-le-Willows, Warrington
     publishedAt: "2026-05-12",
     readingTime: 10,
     featured: false,
+    wordCount: 1850,
+    faqs: [
+      {
+        question: "How long does a driveway cleaning take in Newton-le-Willows?",
+        answer: "Most standard driveways in Newton-le-Willows and the WA12 area take 2–4 hours to clean professionally. Larger driveways, heavily stained block paving, or those requiring resealing may take a full day.",
+      },
+      {
+        question: "Can exterior cleaning be done in winter in Warrington and St Helens?",
+        answer: "Yes, with some limitations. Roof soft washing and gutter cleaning can be carried out year-round across Warrington, St Helens, and Newton-le-Willows. Pressure washing of paths and driveways is best avoided during freezing conditions as water can refreeze on treated surfaces. Biocide treatments should be applied in dry conditions above 5°C.",
+      },
+      {
+        question: "Will pressure washing damage my block paving driveway?",
+        answer: "Not when performed correctly by a professional. Exterior cleaning specialists use rotary surface cleaners at appropriate pressure settings. Direct lance use at close range by inexperienced operators can cause sand loss and surface damage — always use a qualified contractor.",
+      },
+      {
+        question: "How often should I have my roof cleaned in Newton-le-Willows?",
+        answer: "In Newton-le-Willows and the wider WA12 area, most roofs benefit from professional soft washing every 5–8 years. The North West's damp climate means biological growth builds up faster here than in drier parts of England. Zinc or copper ridge strips can extend intervals between cleans.",
+      },
+      {
+        question: "Is soft washing safe for garden plants near my Newton-le-Willows home?",
+        answer: "Professional biodegradable biocides, when applied correctly and at appropriate dilution, have minimal impact on established garden plants. Reputable exterior cleaning contractors will protect nearby vulnerable plants and borders before treatment begins.",
+      },
+      {
+        question: "How much does roof soft washing cost in Newton-le-Willows in 2026?",
+        answer: "In 2026, professional roof soft washing for a semi-detached property in Newton-le-Willows and the surrounding WA12 area typically costs between £300 and £500. Prices vary based on roof size, pitch, and the extent of biological growth. Always obtain a written quote before work begins.",
+      },
+    ],
   },
 ];
 
