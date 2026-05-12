@@ -312,7 +312,7 @@ Contact Sefton Roofing for a free roof inspection and honest assessment of your 
       "Newton-le-Willows homeowners face the same damp-climate challenges as the rest of the North West. This guide covers everything you need to know about exterior cleaning — roof washing, driveway pressure washing, and more.",
     content: `If you live in Newton-le-Willows, Earlestown, or the wider Warrington and St Helens area, you'll know how quickly the North West climate can take its toll on the exterior of your home. Persistent rainfall, low winter sun, and high humidity create ideal conditions for moss, algae, and grime to build up on roofs, driveways, patios, and render — often far faster than homeowners expect.
 
-This guide covers everything you need to know about exterior cleaning in Newton-le-Willows, from roof soft washing and driveway pressure washing to conservatory cleaning and render treatment.
+This guide was prepared by [R.R.M External Cleaning Specialist](https://rrmexternalcleaningspecialist.co.uk) — exterior cleaning professionals based in Newton-le-Willows — and covers everything you need to know about exterior cleaning in the area, from roof soft washing and driveway pressure washing to conservatory cleaning and render treatment.
 
 ## What Is Exterior Cleaning and Why Does It Matter?
 
@@ -431,7 +431,7 @@ When selecting an exterior cleaning company, look for:
 - **Biodegradable cleaning solutions** — especially for roof and render work near gardens
 - **CHAS or similar accreditation** for commercial work
 
-For homeowners in Newton-le-Willows, Earlestown, Haydock, Golborne, and the wider WA12 area, **R.R.M External Cleaning Specialist** (rrmexternalcleaningspecialist.co.uk) provide professional exterior cleaning services including roof soft washing, driveway pressure washing, gutter cleaning, and render treatment. Fully insured and experienced across the North West.
+For homeowners in Newton-le-Willows, Earlestown, Haydock, Golborne, and the wider WA12 area, [exterior cleaning specialists R.R.M External Cleaning Specialist](https://rrmexternalcleaningspecialist.co.uk) provide professional exterior cleaning services including roof soft washing, driveway pressure washing, gutter cleaning, and render treatment. Fully insured and experienced across the North West.
 
 ## Frequently Asked Questions — Exterior Cleaning in Newton-le-Willows
 
@@ -461,7 +461,7 @@ The North West's climate makes exterior cleaning a practical necessity rather th
 - Prevents costly structural damage from damp and biological growth
 - Is safer underfoot — cleaned paths and driveways are far less slippery
 
-For professional exterior cleaning services across Newton-le-Willows, Warrington, St Helens, and Wigan, visit **rrmexternalcleaningspecialist.co.uk**.`,
+For professional exterior cleaning services across Newton-le-Willows, Warrington, St Helens, and Wigan, visit [rrmexternalcleaningspecialist.co.uk](https://rrmexternalcleaningspecialist.co.uk).`,
     category: "Guides",
     tags: [
       "exterior cleaning",

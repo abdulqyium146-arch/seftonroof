@@ -202,6 +202,64 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Trusted Partners */}
+      <section className="py-16 bg-slate-50">
+        <div className="container-xl">
+          <div className="text-center mb-10">
+            <div className="badge-orange mb-4 w-fit mx-auto">Trusted Partners</div>
+            <h2 className="text-3xl font-black text-brand-navy mb-3">
+              Recommended Specialists
+            </h2>
+            <p className="text-slate-600 max-w-xl mx-auto">
+              We work alongside trusted local specialists to ensure our customers always get the right expert for every job.
+            </p>
+          </div>
+          <div className="max-w-2xl mx-auto">
+            <div className="card-base p-8 flex flex-col sm:flex-row items-start gap-6">
+              <div className="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg viewBox="0 0 40 40" className="w-7 h-7 fill-brand-orange" aria-hidden="true">
+                  <path d="M20 4C11.2 4 4 11.2 4 20s7.2 16 16 16 16-7.2 16-16S28.8 4 20 4zm0 6c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3zm0 22.4c-4 0-7.6-2-9.8-5.2.1-3.2 6.6-5 9.8-5 3.2 0 9.6 1.8 9.8 5-2.2 3.2-5.8 5.2-9.8 5.2z"/>
+                </svg>
+              </div>
+              <div className="flex-1">
+                <a
+                  href="https://rrmexternalcleaningspecialist.co.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg font-bold text-brand-navy hover:text-brand-orange transition-colors block mb-1"
+                >
+                  R.R.M External Cleaning Specialist
+                </a>
+                <p className="text-slate-500 text-sm mb-1 font-medium">
+                  Exterior Cleaning — Newton-le-Willows, Warrington &amp; St Helens
+                </p>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                  Our recommended partner for driveway pressure washing, roof soft washing, render cleaning,
+                  conservatory cleaning, and full exterior property maintenance across the Newton-le-Willows
+                  and wider Warrington area. Fully insured, locally based, and trusted by North West homeowners.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {["Driveway Pressure Washing", "Roof Soft Washing", "Render Cleaning", "Gutter Cleaning", "Conservatory Cleaning"].map((s) => (
+                    <span key={s} className="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs rounded-lg">{s}</span>
+                  ))}
+                </div>
+                <a
+                  href="https://rrmexternalcleaningspecialist.co.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-brand-orange font-semibold text-sm hover:gap-2.5 transition-all"
+                >
+                  Visit rrmexternalcleaningspecialist.co.uk
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Coverage area */}
       <section className="py-12 bg-brand-navy text-white">
         <div className="container-xl text-center">

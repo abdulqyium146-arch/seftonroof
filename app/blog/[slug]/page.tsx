@@ -1,13 +1,45 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Calendar, Clock, ArrowRight, Phone, Tag, ChevronRight } from "lucide-react";
+import { Calendar, Clock, ArrowRight, Phone, Tag, ChevronRight, ExternalLink } from "lucide-react";
 import { blogPosts, getPostBySlug } from "@/data/blog";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { SchemaOrg } from "@/components/ui/SchemaOrg";
 import { generateBreadcrumbSchema } from "@/lib/schema";
 import { SITE } from "@/lib/constants";
+
+function renderInline(text: string, keyPrefix: string | number) {
+  const parts: React.ReactNode[] = [];
+  const regex = /\*\*([^*]+)\*\*|\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  while ((m = regex.exec(text)) !== null) {
+    if (m.index > last) parts.push(text.slice(last, m.index));
+    if (m[0].startsWith("**")) {
+      parts.push(
+        <strong key={`${keyPrefix}-s${m.index}`} className="font-bold text-brand-navy">
+          {m[1]}
+        </strong>
+      );
+    } else {
+      const isExternal = !m[3].startsWith(SITE.url);
+      parts.push(
+        <a
+          key={`${keyPrefix}-a${m.index}`}
+          href={m[3]}
+          {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          className="text-brand-orange font-semibold hover:underline"
+        >
+          {m[2]}
+        </a>
+      );
+    }
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts.length ? <>{parts}</> : <>{text}</>;
+}
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -184,6 +216,36 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       </h3>
                     );
                   }
+                  if (section.startsWith("| ")) {
+                    const rows = section.split("\n").filter((r) => r.trim().startsWith("|"));
+                    const headers = rows[0].split("|").filter(Boolean).map((c) => c.trim());
+                    const dataRows = rows.slice(2);
+                    return (
+                      <div key={i} className="my-6 overflow-x-auto rounded-xl border border-slate-200">
+                        <table className="w-full border-collapse text-sm">
+                          <thead>
+                            <tr className="bg-brand-navy text-white">
+                              {headers.map((h, j) => (
+                                <th key={j} className="p-3 text-left font-semibold">{h}</th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {dataRows.map((row, ri) => {
+                              const cells = row.split("|").filter(Boolean).map((c) => c.trim());
+                              return (
+                                <tr key={ri} className={ri % 2 === 0 ? "bg-white" : "bg-slate-50"}>
+                                  {cells.map((cell, ci) => (
+                                    <td key={ci} className="p-3 border-b border-slate-100 text-slate-600">{cell}</td>
+                                  ))}
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+                    );
+                  }
                   if (section.startsWith("- ")) {
                     const items = section.split("\n").filter((l) => l.startsWith("- "));
                     return (
@@ -191,32 +253,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         {items.map((item, j) => (
                           <li key={j} className="flex items-start gap-2 text-slate-600">
                             <span className="text-brand-orange font-bold mt-0.5">✓</span>
-                            {item.replace("- ", "")}
+                            <span>{renderInline(item.replace(/^- /, ""), `${i}-${j}`)}</span>
                           </li>
                         ))}
                       </ul>
                     );
                   }
-                  if (section.includes("**") && section.startsWith("**")) {
+                  if (section.startsWith("**") && section.includes("\n")) {
                     const lines = section.split("\n");
                     return (
                       <div key={i} className="my-4">
-                        {lines.map((line, j) => {
-                          if (line.startsWith("**") && line.endsWith("**")) {
-                            return (
-                              <p key={j} className="font-bold text-brand-navy mt-4 mb-1">
-                                {line.replace(/\*\*/g, "")}
-                              </p>
-                            );
-                          }
-                          return <p key={j} className="text-slate-600 mb-2">{line}</p>;
-                        })}
+                        {lines.map((line, j) => (
+                          <p key={j} className={line.startsWith("**") && line.endsWith("**") ? "font-bold text-brand-navy mt-4 mb-1" : "text-slate-600 mb-2"}>
+                            {renderInline(line, `${i}-${j}`)}
+                          </p>
+                        ))}
                       </div>
                     );
                   }
                   return (
                     <p key={i} className="text-slate-600 leading-relaxed mb-4">
-                      {section}
+                      {renderInline(section, i)}
                     </p>
                   );
                 })}
@@ -237,20 +294,57 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
 
               {/* Author box */}
-              <div className="mt-8 bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-brand-orange rounded-xl flex items-center justify-center text-white font-black">
-                    SR
-                  </div>
-                  <div>
-                    <div className="font-bold text-brand-navy">{post.author}</div>
-                    <div className="text-slate-500 text-sm">
-                      Liverpool&apos;s trusted roofing experts since {SITE.founded}.
-                      Serving all of Merseyside with expert roofing and property maintenance services.
+              {post.author.includes("Guest Post") ? (
+                <div className="mt-8 bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Guest Contributor</p>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <ExternalLink className="w-5 h-5 text-brand-orange" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-brand-navy mb-1">
+                        <a
+                          href="https://rrmexternalcleaningspecialist.co.uk"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-brand-orange transition-colors"
+                        >
+                          R.R.M External Cleaning Specialist
+                        </a>
+                      </div>
+                      <p className="text-slate-500 text-sm leading-relaxed mb-3">
+                        Professional exterior cleaning services across Newton-le-Willows, Warrington,
+                        St Helens, and Wigan — specialising in roof soft washing, driveway pressure washing,
+                        render cleaning, and gutter maintenance.
+                      </p>
+                      <a
+                        href="https://rrmexternalcleaningspecialist.co.uk"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-brand-orange font-semibold text-sm hover:gap-2.5 transition-all"
+                      >
+                        Visit rrmexternalcleaningspecialist.co.uk
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </a>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <div className="mt-8 bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-brand-orange rounded-xl flex items-center justify-center text-white font-black">
+                      SR
+                    </div>
+                    <div>
+                      <div className="font-bold text-brand-navy">{post.author}</div>
+                      <div className="text-slate-500 text-sm">
+                        Liverpool&apos;s trusted roofing experts since {SITE.founded}.
+                        Serving all of Merseyside with expert roofing and property maintenance services.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </article>
 
             {/* Sidebar */}
@@ -297,6 +391,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       </Link>
                     ))}
                   </div>
+                </div>
+              )}
+
+              {/* Guest contributor widget */}
+              {post.author.includes("Guest Post") && (
+                <div className="bg-slate-50 rounded-2xl p-5 border border-slate-100">
+                  <h3 className="font-bold text-brand-navy text-sm mb-3">About the Contributor</h3>
+                  <p className="text-slate-500 text-xs leading-relaxed mb-3">
+                    Exterior cleaning specialists serving Newton-le-Willows, Warrington &amp; the wider North West.
+                  </p>
+                  <a
+                    href="https://rrmexternalcleaningspecialist.co.uk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 w-full bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold py-2.5 px-4 rounded-xl transition-colors text-sm justify-center"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    R.R.M Exterior Cleaning
+                  </a>
                 </div>
               )}
 
