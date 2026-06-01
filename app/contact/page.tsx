@@ -47,7 +47,7 @@ const contactMethods = [
     title: "WhatsApp",
     primary: "Message Us",
     sub: "Send photos of your roofing issue for a faster assessment",
-    action: `https://wa.me/447971321313?text=Hi, I'd like a free roofing quote`,
+    action: `https://wa.me/447845463877?text=Hi, I'd like a free roofing quote`,
     actionLabel: "WhatsApp us",
     color: "green",
     emergency: false,

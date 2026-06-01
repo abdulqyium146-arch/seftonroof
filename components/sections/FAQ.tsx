@@ -90,7 +90,7 @@ export function FAQ({ limit = 8 }: { limit?: number }) {
                 and 24/7 for emergencies.
               </p>
               <a
-                href="tel:+447971321313"
+                href="tel:+447845463877"
                 className="block text-center bg-brand-orange hover:bg-brand-orange-dark text-white font-bold py-3 px-6 rounded-xl transition-colors"
               >
                 Call 07845 463877
