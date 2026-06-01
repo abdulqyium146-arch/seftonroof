@@ -27,8 +27,12 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   const { service: serviceSlug } = await params;
   const service = getServiceBySlug(serviceSlug);
   if (!service) return {};
+  // Commercial page gets an enhanced title that targets broader intent
+  const titleOverride = service.category === "commercial"
+    ? "Commercial Roof Cleaning Liverpool — Industrial & Flat Roof Specialists"
+    : service.name;
   return generateServiceMetadata(
-    service.name,
+    titleOverride,
     service.slug,
     service.description,
     service.keywords
@@ -57,9 +61,30 @@ export default async function ServicePage({ params }: ServicePageProps) {
     { name: `${service.name} Liverpool`, url: `${SITE.url}/services/${service.slug}` },
   ]);
 
-  const relatedServices = services
-    .filter((s) => s.category === service.category && s.slug !== service.slug)
-    .slice(0, 3);
+  // Commercial pages get an additional WebPage schema for freshness signals
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE.url}/services/${service.slug}`,
+    url: `${SITE.url}/services/${service.slug}`,
+    name: `${service.name} Liverpool — ${SITE.shortName}`,
+    description: service.description,
+    inLanguage: "en-GB",
+    isPartOf: { "@id": `${SITE.url}/#website` },
+    ...(service.category === "commercial"
+      ? {
+          audience: { "@type": "Audience", audienceType: "Commercial Property Managers, Facilities Managers, Landlords" },
+          about: { "@type": "Thing", name: "Commercial Roof Cleaning", sameAs: "https://en.wikipedia.org/wiki/Pressure_washing" },
+        }
+      : {}),
+  };
+
+  const relatedServices = (() => {
+    const same = services.filter((s) => s.category === service.category && s.slug !== service.slug).slice(0, 3);
+    if (same.length > 0) return same;
+    // Commercial has no siblings — fall back to cleaning services for internal linking
+    return services.filter((s) => s.category === "cleaning" && s.slug !== service.slug).slice(0, 3);
+  })();
 
   const serviceReviews = testimonials.filter((t) =>
     t.service.toLowerCase().includes(service.shortName.toLowerCase())
@@ -69,6 +94,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
   return (
     <>
+      <SchemaOrg schema={webPageSchema} />
       <SchemaOrg schema={serviceSchema} />
       <SchemaOrg schema={howToSchema} />
       <SchemaOrg schema={faqSchema} />
@@ -266,6 +292,77 @@ export default async function ServicePage({ params }: ServicePageProps) {
           </div>
         </div>
       </section>
+
+      {/* Commercial-specific: property types + compliance trust block */}
+      {service.category === "commercial" && (
+        <>
+          <section className="py-16 bg-brand-navy text-white">
+            <div className="container-xl">
+              <div className="grid lg:grid-cols-2 gap-12 items-start">
+                <div>
+                  <div className="badge-orange mb-4 w-fit">Commercial Properties We Serve</div>
+                  <h2 className="text-3xl font-black text-white mb-6">
+                    Commercial Roof Cleaning Across Every Sector in Liverpool
+                  </h2>
+                  <p className="text-slate-300 leading-relaxed mb-8">
+                    Our commercial roof cleaning team operates across all sectors in Liverpool and
+                    Merseyside — from small independent retail units to large multi-site industrial
+                    estates. If it has a roof and it&apos;s a commercial property, we clean it.
+                  </p>
+                  <div className="grid grid-cols-2 gap-3">
+                    {[
+                      "Office Buildings & Business Parks",
+                      "Warehouses & Distribution Centres",
+                      "Retail Units & Shopping Centres",
+                      "Schools, Colleges & Universities",
+                      "Industrial Premises & Factories",
+                      "NHS & Council Buildings",
+                      "Hotels & Hospitality Venues",
+                      "Residential Apartment Blocks",
+                      "Car Parks & Multi-Storey Decks",
+                      "Places of Worship & Community Halls",
+                    ].map((type) => (
+                      <div key={type} className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-brand-orange flex-shrink-0 mt-0.5" />
+                        <span className="text-slate-300 text-sm">{type}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="badge-orange mb-2 w-fit">Compliance &amp; Documentation</div>
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    Full H&amp;S Documentation as Standard
+                  </h3>
+                  {[
+                    { label: "Method Statements", desc: "Site-specific method statements produced before every commercial job" },
+                    { label: "COSHH Assessments", desc: "Full COSHH documentation for all cleaning agents and chemicals used" },
+                    { label: "Risk Assessments", desc: "Comprehensive risk assessments compliant with WAH Regulations 2005" },
+                    { label: "£5M Public Liability", desc: "£5 million public liability insurance — certificates available on request" },
+                    { label: "PPM Contracts", desc: "Planned preventative maintenance contracts with scheduled reporting" },
+                    { label: "Out-of-Hours Working", desc: "Evening, weekend and bank holiday availability at no premium" },
+                  ].map(({ label, desc }) => (
+                    <div key={label} className="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/10">
+                      <Shield className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
+                      <div>
+                        <div className="text-white font-semibold text-sm">{label}</div>
+                        <div className="text-slate-400 text-xs mt-0.5">{desc}</div>
+                      </div>
+                    </div>
+                  ))}
+                  <a
+                    href={`tel:${SITE.phone}`}
+                    className="flex items-center justify-center gap-2 w-full bg-brand-orange hover:bg-brand-orange-dark text-white font-bold py-3 px-6 rounded-xl transition-colors mt-4"
+                  >
+                    <Phone className="w-5 h-5" />
+                    Request a Free Site Survey
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
 
       {/* Process */}
       <section className="py-16 bg-slate-50">
