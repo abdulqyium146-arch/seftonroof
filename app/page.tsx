@@ -16,13 +16,13 @@ import { globalFaqs } from "@/data/faqs";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: `${SITE.name} | Liverpool's Trusted Roofing Specialists`,
+  title: "Roof Cleaning Liverpool | Moss Removal & Roof Cleaning Specialists",
   description:
-    "Liverpool's highest-rated roofing company. Expert roof repairs, cleaning, gutter services and property maintenance across Merseyside. Free quotes · 24/7 emergency · 10-year guarantee.",
+    "Liverpool's expert roof cleaning specialists. Professional moss removal, soft washing, steam cleaning & tile cleaning across Merseyside. Roof repairs & flat roofs too. Free quotes · 10-year guarantee.",
   openGraph: {
-    title: `${SITE.name} | Liverpool Roofing Specialists`,
+    title: "Roof Cleaning Liverpool — Sefton Roofing & Property Maintenance",
     description:
-      "Expert roofing services across Liverpool and Merseyside. Free quotes, 24/7 emergency response, 10-year guarantee.",
+      "Liverpool's highest-rated roof cleaning company. Moss removal, soft washing, steam cleaning, slate & tile cleaning. Plus roof repairs. Free quotes, 10-year guarantee.",
     url: SITE.url,
     images: [{ url: `${SITE.url}/logo.webp`, width: 1200, height: 630 }],
   },

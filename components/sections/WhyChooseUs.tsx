@@ -49,9 +49,9 @@ const reasons = [
   },
   {
     icon: Wrench,
-    title: "All Roof Types — All Services",
+    title: "All Roof Types — Safe Cleaning Methods",
     description:
-      "Slate, concrete tile, clay tile, flat EPDM, GRP, felt — we work on all roof types. Repairs, cleaning, guttering, fascias — one local company for everything.",
+      "Slate, concrete tile, clay tile, flat EPDM, GRP, felt — we use the correct cleaning method for every roof type. Soft wash, steam, biocide — safe and effective every time.",
     highlight: "All Roof Types",
   },
   {
@@ -85,8 +85,8 @@ export function WhyChooseUs() {
             <span className="text-gradient-orange">Difference</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            We&apos;ve built our reputation over 14 years by putting Liverpool
-            homeowners first — every time, on every job.
+            Liverpool&apos;s trusted roof cleaning specialists since 2010 — built
+            on honest advice, proven results, and roofs that stay clean for years.
           </p>
         </div>
 
@@ -124,8 +124,8 @@ export function WhyChooseUs() {
                 Ready to Get Started?
               </h3>
               <p className="text-orange-100 text-lg max-w-lg">
-                Call Liverpool&apos;s highest-rated roofing team now for your free
-                quote. No obligation, no pressure — just honest advice from local experts.
+                Call Liverpool&apos;s highest-rated roof cleaning specialists now for your
+                free quote. No obligation, no pressure — just honest advice from local experts.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">

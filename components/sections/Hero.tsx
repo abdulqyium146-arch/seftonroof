@@ -6,10 +6,10 @@ import { Phone, Star, Shield, CheckCircle, ArrowRight, MapPin, Clock } from "luc
 import { SITE } from "@/lib/constants";
 
 const stats = [
-  { value: "1,850+", label: "Roofs Repaired" },
+  { value: "1,850+", label: "Roofs Cleaned & Repaired" },
   { value: "14+", label: "Years Experience" },
   { value: "4.9★", label: "Google Rating" },
-  { value: "60 Min", label: "Emergency Response" },
+  { value: "5–10yr", label: "Biocide Regrowth Protection" },
 ];
 
 const trustBadges = [
@@ -35,7 +35,7 @@ export function Hero() {
     <section
       ref={heroRef}
       className="relative min-h-[90vh] bg-brand-navy flex items-center overflow-hidden"
-      aria-label="Hero section — Liverpool's trusted roofing specialists"
+      aria-label="Hero section — Liverpool's expert roof cleaning specialists"
       id="hero"
     >
       {/* Background pattern */}
@@ -81,16 +81,17 @@ export function Hero() {
               id="speakable-title"
             >
               Liverpool&apos;s{" "}
-              <span className="text-gradient-orange">Trusted</span>{" "}
-              Roofing Specialists
+              <span className="text-gradient-orange">Roof Cleaning</span>{" "}
+              Specialists
             </h1>
 
             <p
               className="text-slate-300 text-lg sm:text-xl leading-relaxed mb-8 max-w-lg"
               id="speakable-description"
             >
-              Expert roof repairs, cleaning, gutter services and property maintenance
-              across Liverpool and Merseyside. Free quotes. 24/7 emergency response.{" "}
+              Professional roof cleaning, moss removal, soft washing and steam cleaning
+              across Liverpool and Merseyside. Plus expert roof repairs and flat roof work.
+              Free quotes.{" "}
               <strong className="text-white">10-year guarantee</strong> on all work.
             </p>
 
@@ -164,16 +165,16 @@ export function Hero() {
                 <span className="text-white font-bold ml-2">4.9/5</span>
               </div>
               <blockquote className="text-slate-300 text-sm leading-relaxed mb-4 italic">
-                &ldquo;Sefton Roofing attended within the hour after a storm damaged our roof.
-                Professional, fast, and excellent quality work. Wouldn&apos;t use anyone else.&rdquo;
+                &ldquo;Roof looked brand new after Sefton Roofing cleaned it. Moss completely gone,
+                tiles restored — the biocide treatment has kept it spotless for two years.&rdquo;
               </blockquote>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold text-sm">
-                  M
+                  J
                 </div>
                 <div>
-                  <div className="text-white text-sm font-semibold">Margaret H.</div>
-                  <div className="text-slate-500 text-xs">Crosby, Liverpool · Verified Google Review</div>
+                  <div className="text-white text-sm font-semibold">James R.</div>
+                  <div className="text-slate-500 text-xs">Waterloo, Liverpool · Verified Google Review</div>
                 </div>
               </div>
             </div>
@@ -181,11 +182,11 @@ export function Hero() {
             {/* Services quick links */}
             <div className="mt-4 grid grid-cols-3 gap-2">
               {[
-                { label: "Roof Repairs", href: "/services/roof-repairs" },
-                { label: "Emergency", href: "/services/emergency-roof-repairs" },
                 { label: "Roof Cleaning", href: "/services/roof-cleaning" },
-                { label: "Leadwork", href: "/services/leadwork" },
                 { label: "Moss Removal", href: "/services/roof-moss-removal" },
+                { label: "Soft Washing", href: "/services/roof-soft-washing" },
+                { label: "Slate Cleaning", href: "/services/slate-roof-cleaning" },
+                { label: "Roof Repairs", href: "/services/roof-repairs" },
                 { label: "Flat Roofs", href: "/services/flat-roof-repairs" },
               ].map((item) => (
                 <Link

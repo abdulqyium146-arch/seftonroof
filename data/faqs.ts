@@ -78,16 +78,16 @@ export const globalFaqs: FAQ[] = [
       "No. High-pressure washing can damage natural slate by widening hairline cracks, dislodging nail fixings, and disturbing the surface texture. For slate roofs, we always use low-pressure soft wash techniques combined with specialist biocidal treatments, which are both safer and more effective.",
   },
   {
-    category: "guttering",
-    question: "How do I know if my gutters need cleaning or repairing?",
+    category: "cleaning",
+    question: "How long does biocide treatment last after a roof clean?",
     answer:
-      "Signs your gutters need attention include: water overflowing over the edges of gutters during rainfall, visible plants growing in gutters, gutters sagging or pulling away from the fascia, damp patches on external walls below gutter lines, or visible cracks or splits in gutter sections. We offer a free gutter inspection with any visit.",
+      "A professionally applied biocide treatment after roof cleaning typically inhibits moss and algae regrowth for 5–10 years in Liverpool's climate. The exact duration depends on the roof's orientation, surrounding trees, and local rainfall patterns. North-facing slopes in sheltered positions may need retreating sooner than exposed south-facing roofs.",
   },
   {
     category: "pricing",
-    question: "How much do roofing services cost in Liverpool?",
+    question: "How much does roof cleaning cost in Liverpool?",
     answer:
-      "Pricing varies depending on the type and extent of work required. Minor roof repairs start from around £150; gutter cleaning typically ranges from £60–£150; roof cleaning from £300–£800; fascia and soffit replacement from £800–£2,500. We provide free, detailed written quotes before any work begins — no hidden extras, ever.",
+      "Pricing depends on roof size, access, and the extent of moss or algae growth. A standard semi-detached typically costs £250–£500 for a full clean with biocide treatment. Soft washing, steam cleaning, and specialist slate or tile cleaning are priced at the same range — we always recommend the safest method for your specific roof type. Minor roof repairs start from £150. We provide free, detailed written quotes before any work begins.",
   },
   {
     category: "pricing",

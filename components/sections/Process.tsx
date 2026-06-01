@@ -12,9 +12,9 @@ const steps = [
   {
     number: "02",
     icon: Search,
-    title: "Free Roof Inspection",
+    title: "Free Roof Assessment",
     description:
-      "One of our experienced Liverpool roofers visits your property and carries out a thorough inspection — assessing the visible issue and checking for related problems.",
+      "One of our experienced Liverpool roof cleaning specialists visits your property. We assess the roof type, extent of moss, algae or lichen growth, and recommend the safest, most effective cleaning method.",
     duration: "Within 2–3 days",
   },
   {
