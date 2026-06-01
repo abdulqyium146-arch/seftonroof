@@ -5,8 +5,8 @@ export const SITE = {
   description:
     "Expert roofing repairs, roof cleaning, flat roof repairs and leadwork across Liverpool and Merseyside. Free quotes, 24/7 emergency response.",
   url: "https://seftonroofing.co.uk",
-  phone: "+447971321313",
-  phoneDisplay: "07971 321313",
+  phone: "+447845463877",
+  phoneDisplay: "07845 463877",
   email: "sefton-roofing@mail.com",
   address: {
     street: "Waterloo",

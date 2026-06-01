@@ -51,13 +51,13 @@ export const globalFaqs: FAQ[] = [
     category: "repairs",
     question: "My roof is leaking — what should I do right now?",
     answer:
-      "Call us immediately on 07971 321313. While you wait, try to contain any water with buckets or towels and move valuables away from the affected area. Do not attempt to access your roof yourself — this is dangerous. Our emergency team will make your roof safe as a priority, then carry out a permanent repair.",
+      "Call us immediately on 07845 463877. While you wait, try to contain any water with buckets or towels and move valuables away from the affected area. Do not attempt to access your roof yourself — this is dangerous. Our emergency team will make your roof safe as a priority, then carry out a permanent repair.",
   },
   {
     category: "emergency",
     question: "Do you offer 24/7 emergency roofing in Liverpool?",
     answer:
-      "Yes. We operate a genuine 24/7 emergency roofing service, 365 days a year, including bank holidays and Christmas. We aim to attend within 60 minutes across Liverpool and Merseyside. Our emergency line is 07971 321313 — we always answer.",
+      "Yes. We operate a genuine 24/7 emergency roofing service, 365 days a year, including bank holidays and Christmas. We aim to attend within 60 minutes across Liverpool and Merseyside. Our emergency line is 07845 463877 — we always answer.",
   },
   {
     category: "emergency",

@@ -6,7 +6,7 @@ const steps = [
     icon: Phone,
     title: "Call or Contact Us",
     description:
-      "Call us on 07971 321313 or fill in our contact form. We respond quickly — same day for most enquiries, within the hour for emergencies.",
+      "Call us on 07845 463877 or fill in our contact form. We respond quickly — same day for most enquiries, within the hour for emergencies.",
     duration: "Immediate response",
   },
   {

@@ -93,7 +93,7 @@ export function FAQ({ limit = 8 }: { limit?: number }) {
                 href="tel:+447971321313"
                 className="block text-center bg-brand-orange hover:bg-brand-orange-dark text-white font-bold py-3 px-6 rounded-xl transition-colors"
               >
-                Call 07971 321313
+                Call 07845 463877
               </a>
             </div>
           </div>

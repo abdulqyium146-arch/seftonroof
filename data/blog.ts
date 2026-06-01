@@ -107,7 +107,7 @@ While it's possible to clean gutters yourself, we strongly recommend professiona
 - Professionals spot damage, cracking, and sagging that homeowners miss
 - A professional clean includes a flush test to confirm full gutter performance
 
-Sefton Roofing offers professional gutter cleaning across all of Liverpool and Merseyside. Call us on 07971 321313 for a free quote.`,
+Sefton Roofing offers professional gutter cleaning across all of Liverpool and Merseyside. Call us on 07845 463877 for a free quote.`,
     category: "Guttering",
     tags: ["gutter cleaning", "liverpool gutters", "home maintenance", "blocked gutters", "2026"],
     author: "Sefton Roofing Team",
@@ -195,7 +195,7 @@ If water is coming through your ceiling:
 
 ## Step 3: Call an Emergency Roofer Immediately
 
-Call Sefton Roofing's emergency line: **07971 321313**
+Call Sefton Roofing's emergency line: **07845 463877**
 
 We answer 24/7, 365 days a year, including Christmas and bank holidays. We aim to attend anywhere in Liverpool and Merseyside within 60 minutes of your call.
 
@@ -235,7 +235,7 @@ Our emergency team will:
 
 **Wind damage to flat roofs:** Felt membranes can lift or tear in high winds, causing immediate water ingress.
 
-Do not wait with a roofing emergency. Call us immediately on 07971 321313.`,
+Do not wait with a roofing emergency. Call us immediately on 07845 463877.`,
     category: "Emergency",
     tags: ["emergency roofing", "storm damage", "roof emergency liverpool", "urgent roof repair", "2026"],
     author: "Sefton Roofing Team",

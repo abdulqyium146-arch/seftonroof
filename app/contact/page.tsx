@@ -7,7 +7,7 @@ import { SITE } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Contact Sefton Roofing — Free Roofing Quotes Liverpool",
   description:
-    "Contact Sefton Roofing for a free, no-obligation roofing quote in Liverpool. Call 07971 321313, email, or fill in our contact form. 24/7 emergency line available.",
+    "Contact Sefton Roofing for a free, no-obligation roofing quote in Liverpool. Call 07845 463877, email, or fill in our contact form. 24/7 emergency line available.",
   alternates: { canonical: `${SITE.url}/contact` },
 };
 
