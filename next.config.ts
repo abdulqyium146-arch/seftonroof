@@ -73,6 +73,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Strip trailing slashes — permanent 301 so Google consolidates to canonical URLs
+      {
+        source: "/:path+/",
+        destination: "/:path+",
+        permanent: true,
+      },
       {
         source: "/roof-repairs",
         destination: "/services/roof-repairs",
