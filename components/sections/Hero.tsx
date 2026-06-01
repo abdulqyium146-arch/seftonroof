@@ -184,8 +184,8 @@ export function Hero() {
                 { label: "Roof Repairs", href: "/services/roof-repairs" },
                 { label: "Emergency", href: "/services/emergency-roof-repairs" },
                 { label: "Roof Cleaning", href: "/services/roof-cleaning" },
-                { label: "Gutters", href: "/services/gutter-cleaning" },
-                { label: "Fascias", href: "/services/fascias-and-soffits" },
+                { label: "Leadwork", href: "/services/leadwork" },
+                { label: "Moss Removal", href: "/services/roof-moss-removal" },
                 { label: "Flat Roofs", href: "/services/flat-roof-repairs" },
               ].map((item) => (
                 <Link

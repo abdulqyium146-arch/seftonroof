@@ -503,7 +503,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     { label: "Roof Repairs", href: "/services/roof-repairs" },
                     { label: "Emergency Repairs", href: "/services/emergency-roof-repairs" },
                     { label: "Roof Cleaning", href: "/services/roof-cleaning" },
-                    { label: "Gutter Cleaning", href: "/services/gutter-cleaning" },
+                    { label: "Flat Roof Repairs", href: "/services/flat-roof-repairs" },
                     { label: "All Services", href: "/services" },
                   ].map((link) => (
                     <Link

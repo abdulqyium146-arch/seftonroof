@@ -19,7 +19,7 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L1–L36",
     description:
-      "Liverpool's trusted roofing specialists. Expert roof repairs, cleaning and property maintenance across all Liverpool postcodes.",
+      "Liverpool's trusted roofing specialists. Expert roof repairs, roof cleaning and flat roof repairs across all Liverpool postcodes.",
     longDescription:
       "As Liverpool's leading roofing contractor, Sefton Roofing serves homes and businesses across every part of the city — from the terraced streets of Toxteth and Everton to the larger Victorian villas of Aigburth and Woolton. Liverpool's exposed position on the Mersey estuary means its properties face some of the most challenging weather conditions in England, with high rainfall, Atlantic winds, and significant temperature variation. Our teams are based locally and understand the specific roofing challenges of Liverpool's diverse housing stock, from grand Edwardian mansions to post-war council housing estates and modern new builds.",
     roofingChallenges: [
@@ -34,8 +34,8 @@ export const areas: Area[] = [
       "roof-repairs",
       "emergency-roof-repairs",
       "roof-cleaning",
-      "gutter-cleaning",
       "flat-roof-repairs",
+      "slate-roof-cleaning",
     ],
     nearbyAreas: ["waterloo", "crosby", "bootle", "walton", "everton"],
     facts: [
@@ -51,7 +51,7 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L22",
     description:
-      "Expert roofing services in Waterloo, Liverpool. Local roofers you can trust — roof repairs, cleaning, gutters and property maintenance in Waterloo.",
+      "Expert roofing services in Waterloo, Liverpool. Local roofers you can trust — roof repairs, roof cleaning and flat roof repairs in Waterloo.",
     longDescription:
       "Waterloo is our home base, and we've been maintaining and repairing the roofs of Waterloo's Victorian terraces, Edwardian semis, and coastal properties for over 14 years. Located directly on the Mersey coast, Waterloo properties face some of the most exposed weather conditions in Merseyside — coastal winds, salt-laden air, and high rainfall that accelerates moss growth and material deterioration. We know Waterloo's rooftops intimately and offer the fastest response times in the area, typically arriving within the hour for emergencies.",
     roofingChallenges: [
@@ -59,14 +59,14 @@ export const areas: Area[] = [
       "Persistent coastal winds causing tile slippage and ridge displacement",
       "High rainfall and proximity to the coast promoting rapid moss growth",
       "Mix of Victorian terraces and Edwardian semis requiring traditional skills",
-      "Coastal exposure meaning gutters block more frequently with windblown debris",
+      "Coastal exposure meaning debris blocks internal gutters more frequently",
     ],
     popularServices: [
       "roof-repairs",
-      "gutter-cleaning",
+      "roof-cleaning",
       "roof-moss-removal",
       "leadwork",
-      "fascias-and-soffits",
+      "flat-roof-repairs",
     ],
     nearbyAreas: ["crosby", "bootle", "litherland", "kirkdale"],
     facts: [
@@ -82,21 +82,21 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L23",
     description:
-      "Professional roofing services in Crosby, Liverpool. Trusted local roofers for roof repairs, moss removal, gutter cleaning and all roofing needs in Crosby.",
+      "Professional roofing services in Crosby, Liverpool. Trusted local roofers for roof repairs, moss removal, roof cleaning and all roofing needs in Crosby.",
     longDescription:
       "Crosby is one of Merseyside's most desirable residential areas, with a wide range of property types from Victorian terraces near Crosby beach to larger interwar detached properties in Blundellsands. The area's proximity to the Irish Sea means coastal exposure is a significant factor for roofing longevity. Sefton Roofing has built an outstanding reputation in Crosby over many years, with a large proportion of our work coming from recommendations within the local community. We understand the specific roofing needs of Crosby's housing stock and provide fast, reliable service to all parts of the area.",
     roofingChallenges: [
       "Coastal exposure from proximity to Crosby beach and the Irish Sea",
       "High winds causing ridge tile displacement on exposed properties",
-      "Sand and salt residue blocking gutters and corroding metal components",
+      "Sand and salt residue accelerating corrosion of metal components",
       "Moss growth on north and west-facing roof slopes",
       "Mix of coastal Victorian terraces and larger interwar properties",
     ],
     popularServices: [
       "roof-repairs",
       "roof-cleaning",
-      "gutter-cleaning",
-      "fascias-and-soffits",
+      "roof-moss-removal",
+      "flat-roof-repairs",
       "leadwork",
     ],
     nearbyAreas: ["waterloo", "formby", "litherland", "maghull"],
@@ -113,9 +113,9 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L20",
     description:
-      "Reliable roofing services in Bootle, Liverpool. Local roofers offering roof repairs, gutter cleaning, flat roof repairs and emergency roofing in Bootle.",
+      "Reliable roofing services in Bootle, Liverpool. Local roofers offering roof repairs, roof cleaning, flat roof repairs and emergency roofing in Bootle.",
     longDescription:
-      "Bootle's predominantly Victorian and Edwardian terraced housing stock presents specific roofing challenges — older properties with original slates, clay ridge tiles, lead flashings, and cast iron guttering that require traditional skills and careful handling. Our Bootle roofing team are experienced with the area's housing types and provide competitive, honest pricing for all roofing and property maintenance needs across Bootle's residential streets.",
+      "Bootle's predominantly Victorian and Edwardian terraced housing stock presents specific roofing challenges — older properties with original slates, clay ridge tiles, lead flashings, and cast iron guttering that require traditional skills and careful handling. Our Bootle roofing team are experienced with the area's housing types and provide competitive, honest pricing for all roofing needs across Bootle's residential streets.",
     roofingChallenges: [
       "Victorian and Edwardian terraces with original slates requiring specialist handling",
       "Older properties with deteriorating lead flashings",
@@ -125,7 +125,7 @@ export const areas: Area[] = [
     ],
     popularServices: [
       "roof-repairs",
-      "gutter-cleaning",
+      "roof-cleaning",
       "slate-roof-cleaning",
       "leadwork",
       "emergency-roof-repairs",
@@ -144,7 +144,7 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L29–L31",
     description:
-      "Trusted roofing services across Sefton, Merseyside. Expert local roofers for all roof types, gutter services, and property maintenance in the Sefton area.",
+      "Trusted roofing services across Sefton, Merseyside. Expert local roofers for all roof types, roof cleaning and specialist roofing in the Sefton area.",
     longDescription:
       "The wider Sefton area encompasses a mix of coastal villages, rural settlements, and suburban residential areas. Roofing needs vary considerably across the area — from exposed coastal properties requiring robust repairs to newer suburban homes needing preventative maintenance. Sefton Roofing has deep roots in the area (our name reflects our long commitment to serving this community) and we provide a comprehensive roofing service to all parts of Sefton.",
     roofingChallenges: [
@@ -156,9 +156,9 @@ export const areas: Area[] = [
     popularServices: [
       "roof-repairs",
       "roof-cleaning",
-      "gutter-cleaning",
-      "property-maintenance",
+      "roof-moss-removal",
       "flat-roof-repairs",
+      "leadwork",
     ],
     nearbyAreas: ["formby", "crosby", "maghull", "litherland"],
     facts: [
@@ -174,7 +174,7 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L37",
     description:
-      "Premium roofing services in Formby. Expert roofers serving Formby's distinctive homes with roof repairs, cleaning and property maintenance.",
+      "Premium roofing services in Formby. Expert roofers serving Formby's distinctive homes with roof repairs, roof cleaning and flat roof repairs.",
     longDescription:
       "Formby is one of Merseyside's most affluent areas, home to larger detached and semi-detached properties that often require premium roofing services. The area's proximity to Formby beach and the National Trust coastal dunes means properties face significant coastal exposure and wind loading. We serve Formby's homeowners with the same attention to quality and detail that the area's properties demand, working on everything from period homes to modern executive houses.",
     roofingChallenges: [
@@ -186,14 +186,14 @@ export const areas: Area[] = [
     popularServices: [
       "roof-repairs",
       "roof-cleaning",
-      "fascias-and-soffits",
-      "gutter-cleaning",
-      "property-maintenance",
+      "slate-roof-cleaning",
+      "flat-roof-repairs",
+      "leadwork",
     ],
     nearbyAreas: ["crosby", "sefton", "maghull", "ormskirk"],
     facts: [
       "Formby is home to the UK's largest population of red squirrels at Formby Point",
-      "The area's large tree population contributes to frequent gutter blockages in autumn",
+      "The area's large tree population contributes to frequent debris accumulation on roofs",
       "Formby's executive housing stock often features complex roof designs requiring specialist skills",
     ],
     geo: { lat: 53.5589, lng: -3.0685 },
@@ -204,7 +204,7 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L4–L9",
     description:
-      "Local roofing services in Walton, Liverpool. Trusted roofers for roof repairs, gutter cleaning and emergency roofing in Walton and surrounding areas.",
+      "Local roofing services in Walton, Liverpool. Trusted roofers for roof repairs, roof cleaning and emergency roofing in Walton and surrounding areas.",
     longDescription:
       "Walton is a densely populated Liverpool suburb with a predominantly Victorian and interwar terraced housing stock. The area's tightly packed streets mean access can be challenging, but our experienced team are adept at working efficiently in restricted spaces. Walton residents benefit from our fast response times and competitive pricing, and we have built a strong local reputation through word-of-mouth recommendations.",
     roofingChallenges: [
@@ -215,7 +215,7 @@ export const areas: Area[] = [
     ],
     popularServices: [
       "roof-repairs",
-      "gutter-cleaning",
+      "roof-cleaning",
       "roof-moss-removal",
       "emergency-roof-repairs",
       "slate-roof-cleaning",
@@ -234,7 +234,7 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L5–L6",
     description:
-      "Reliable roofing services in Everton, Liverpool. Expert roof repairs, emergency roofing and gutter services across Everton.",
+      "Reliable roofing services in Everton, Liverpool. Expert roof repairs, emergency roofing and roof cleaning across Everton.",
     longDescription:
       "Everton is one of Liverpool's historic inner-city areas, with a mix of Victorian terraces, newer social housing, and older properties that require expert roofing care. The area's hillside position provides scenic views over the city but also means properties face increased wind exposure. Our team works across all of Everton's property types with the same commitment to quality and honest pricing.",
     roofingChallenges: [
@@ -246,9 +246,9 @@ export const areas: Area[] = [
     popularServices: [
       "roof-repairs",
       "emergency-roof-repairs",
-      "gutter-cleaning",
+      "roof-cleaning",
       "flat-roof-repairs",
-      "brickwork",
+      "leadwork",
     ],
     nearbyAreas: ["walton", "kirkdale", "anfield", "liverpool"],
     facts: [
@@ -264,7 +264,7 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L4",
     description:
-      "Professional roofing services in Anfield, Liverpool. Local roofers offering roof repairs, gutter cleaning and all roofing services in Anfield.",
+      "Professional roofing services in Anfield, Liverpool. Local roofers offering roof repairs, roof cleaning and all roofing services in Anfield.",
     longDescription:
       "Anfield is a densely built residential area of Liverpool known worldwide for its football heritage. The area's Victorian and Edwardian terraced streets are typical of Liverpool's inner-city housing stock, and their roofs require regular attention to prevent costly damage. Sefton Roofing provides fast, reliable roofing services throughout Anfield.",
     roofingChallenges: [
@@ -275,7 +275,7 @@ export const areas: Area[] = [
     ],
     popularServices: [
       "roof-repairs",
-      "gutter-cleaning",
+      "roof-cleaning",
       "slate-roof-cleaning",
       "leadwork",
       "emergency-roof-repairs",
@@ -294,7 +294,7 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L9–L10",
     description:
-      "Trusted roofing services in Aintree, Liverpool. Expert local roofers for roof repairs, cleaning and property maintenance in Aintree.",
+      "Trusted roofing services in Aintree, Liverpool. Expert local roofers for roof repairs, cleaning and roof moss removal in Aintree.",
     longDescription:
       "Aintree is best known for its world-famous racecourse, but it's also a thriving residential area with a mix of interwar semis, post-war housing, and more modern developments. Our roofing teams cover all of Aintree's property types, providing fast response times and competitive pricing for everything from emergency repairs to planned maintenance.",
     roofingChallenges: [
@@ -305,9 +305,9 @@ export const areas: Area[] = [
     popularServices: [
       "roof-repairs",
       "roof-cleaning",
-      "gutter-cleaning",
+      "roof-moss-removal",
       "tile-roof-cleaning",
-      "fascias-and-soffits",
+      "flat-roof-repairs",
     ],
     nearbyAreas: ["maghull", "walton", "fazakerley", "kirkdale"],
     facts: [
@@ -322,7 +322,7 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L4–L5",
     description:
-      "Local roofing services in Kirkdale, Liverpool. Reliable roofers offering roof repairs, gutter services and emergency roofing in Kirkdale.",
+      "Local roofing services in Kirkdale, Liverpool. Reliable roofers offering roof repairs, slate cleaning and emergency roofing in Kirkdale.",
     longDescription:
       "Kirkdale is one of Liverpool's oldest residential areas with a rich industrial and maritime heritage. Its Victorian terrace streets require specialist roofing knowledge, particularly for original slate roofs, lead valleys, and traditional cast iron guttering found on many properties.",
     roofingChallenges: [
@@ -335,8 +335,8 @@ export const areas: Area[] = [
       "roof-repairs",
       "slate-roof-cleaning",
       "leadwork",
-      "gutter-repairs",
-      "brickwork",
+      "roof-cleaning",
+      "flat-roof-repairs",
     ],
     nearbyAreas: ["bootle", "walton", "everton", "litherland"],
     facts: [
@@ -351,9 +351,9 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L21",
     description:
-      "Professional roofing in Litherland, Merseyside. Expert roofers for roof repairs, cleaning and all roofing services in Litherland.",
+      "Professional roofing in Litherland, Merseyside. Expert roofers for roof repairs, cleaning and flat roof repairs in Litherland.",
     longDescription:
-      "Litherland is a suburban area of Merseyside with predominantly interwar and post-war housing. Our roofing teams serve all of Litherland's residential streets, offering competitive pricing and fast response times for everything from roof tile replacements to complete gutter systems.",
+      "Litherland is a suburban area of Merseyside with predominantly interwar and post-war housing. Our roofing teams serve all of Litherland's residential streets, offering competitive pricing and fast response times for everything from roof tile replacements to complete flat roof installations.",
     roofingChallenges: [
       "Interwar semi-detached properties with concrete tile roofs",
       "Post-war housing requiring flat roof repairs",
@@ -362,9 +362,9 @@ export const areas: Area[] = [
     popularServices: [
       "roof-repairs",
       "tile-roof-cleaning",
-      "gutter-cleaning",
+      "roof-cleaning",
       "flat-roof-repairs",
-      "fascias-and-soffits",
+      "slate-roof-cleaning",
     ],
     nearbyAreas: ["bootle", "waterloo", "crosby", "kirkdale"],
     facts: [
@@ -379,25 +379,25 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L31",
     description:
-      "Trusted roofing services in Maghull, Merseyside. Local roofers for roof repairs, cleaning and property maintenance in Maghull.",
+      "Trusted roofing services in Maghull, Merseyside. Local roofers for roof repairs, roof cleaning and moss removal in Maghull.",
     longDescription:
-      "Maghull is a pleasant suburban town in the north of Merseyside with a mix of interwar semis, post-war detached homes, and newer executive developments. Its residential character and family-friendly reputation mean homeowners here place high value on property maintenance — and we regularly work with Maghull homeowners on everything from annual gutter cleans to complete roof restorations.",
+      "Maghull is a pleasant suburban town in the north of Merseyside with a mix of interwar semis, post-war detached homes, and newer executive developments. Its residential character and family-friendly reputation mean homeowners here place high value on property maintenance — and we regularly work with Maghull homeowners on everything from annual roof cleans to complete roof restorations.",
     roofingChallenges: [
       "Mix of interwar and modern property types",
-      "Tree coverage in residential streets causing gutter blockages",
+      "Tree coverage in residential streets causing debris on roofs",
       "Moss growth on north-facing slopes of semis and detacheds",
     ],
     popularServices: [
       "roof-repairs",
-      "gutter-cleaning",
+      "roof-cleaning",
       "roof-moss-removal",
-      "property-maintenance",
-      "fascias-and-soffits",
+      "flat-roof-repairs",
+      "leadwork",
     ],
     nearbyAreas: ["aintree", "sefton", "formby", "ormskirk"],
     facts: [
       "Maghull is one of Sefton's most popular residential areas for families",
-      "The town's substantial tree coverage makes autumn gutter cleaning particularly important",
+      "The town's substantial tree coverage makes regular roof cleaning particularly important",
     ],
     geo: { lat: 53.5166, lng: -2.9432 },
   },
@@ -407,7 +407,7 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L36",
     description:
-      "Local roofing services in Huyton, Merseyside. Expert roofers for roof repairs, cleaning and property maintenance in Huyton.",
+      "Local roofing services in Huyton, Merseyside. Expert roofers for roof repairs, cleaning and flat roof repairs in Huyton.",
     longDescription:
       "Huyton is a large suburban area east of Liverpool city centre, known for its mix of post-war housing estates, interwar semis, and modern developments. Our roofing teams cover all of Huyton, providing fast response times and competitive pricing across all property types.",
     roofingChallenges: [
@@ -419,7 +419,7 @@ export const areas: Area[] = [
       "roof-repairs",
       "flat-roof-repairs",
       "tile-roof-cleaning",
-      "gutter-cleaning",
+      "roof-cleaning",
       "emergency-roof-repairs",
     ],
     nearbyAreas: ["prescot", "knowsley", "liverpool"],
@@ -446,7 +446,7 @@ export const areas: Area[] = [
     popularServices: [
       "roof-repairs",
       "slate-roof-cleaning",
-      "gutter-cleaning",
+      "roof-cleaning",
       "leadwork",
       "flat-roof-repairs",
     ],
@@ -463,9 +463,9 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L33–L34",
     description:
-      "Reliable roofing services in Knowsley, Merseyside. Expert local roofers for roof repairs, gutter cleaning and property maintenance in Knowsley.",
+      "Reliable roofing services in Knowsley, Merseyside. Expert local roofers for roof repairs, roof cleaning and flat roof repairs in Knowsley.",
     longDescription:
-      "Knowsley is a metropolitan borough encompassing a range of communities from Kirkby to Huyton. Our roofing teams cover all of Knowsley's residential areas, providing fast, reliable service for all roofing and property maintenance needs.",
+      "Knowsley is a metropolitan borough encompassing a range of communities from Kirkby to Huyton. Our roofing teams cover all of Knowsley's residential areas, providing fast, reliable service for all roofing needs.",
     roofingChallenges: [
       "Large post-war housing estates requiring planned maintenance",
       "Mix of social housing and private properties",
@@ -473,10 +473,10 @@ export const areas: Area[] = [
     ],
     popularServices: [
       "roof-repairs",
-      "gutter-cleaning",
+      "roof-cleaning",
       "flat-roof-repairs",
       "tile-roof-cleaning",
-      "property-maintenance",
+      "leadwork",
     ],
     nearbyAreas: ["huyton", "prescot", "liverpool", "fazakerley"],
     facts: [
@@ -491,7 +491,7 @@ export const areas: Area[] = [
     county: "Lancashire",
     postcode: "L39",
     description:
-      "Expert roofing services in Ormskirk. Local roofers covering Ormskirk and surrounding areas for roof repairs, cleaning and property maintenance.",
+      "Expert roofing services in Ormskirk. Local roofers covering Ormskirk and surrounding areas for roof repairs, cleaning and flat roof repairs.",
     longDescription:
       "Ormskirk is a historic market town in West Lancashire, close to the Merseyside border. Our roofing teams extend to cover Ormskirk and its surrounding villages, providing the same high-quality service that Liverpool residents have come to rely on. The area's older properties and rural settings require specialist knowledge, and our experienced team deliver it.",
     roofingChallenges: [
@@ -502,9 +502,9 @@ export const areas: Area[] = [
     popularServices: [
       "roof-repairs",
       "roof-cleaning",
-      "gutter-cleaning",
+      "roof-moss-removal",
       "leadwork",
-      "brickwork",
+      "flat-roof-repairs",
     ],
     nearbyAreas: ["formby", "maghull", "sefton"],
     facts: [
@@ -519,7 +519,7 @@ export const areas: Area[] = [
     county: "Merseyside",
     postcode: "L9–L10",
     description:
-      "Local roofing services in Fazakerley, Liverpool. Reliable roofers for roof repairs, gutter cleaning and property maintenance in Fazakerley.",
+      "Local roofing services in Fazakerley, Liverpool. Reliable roofers for roof repairs, roof cleaning and flat roof repairs in Fazakerley.",
     longDescription:
       "Fazakerley is a north Liverpool suburb with a predominantly post-war housing stock, including large estates built in the 1950s and 1960s alongside older interwar properties. Our roofing teams cover all of Fazakerley, providing competitive pricing and fast response times for all roofing needs.",
     roofingChallenges: [
@@ -530,9 +530,9 @@ export const areas: Area[] = [
     popularServices: [
       "roof-repairs",
       "tile-roof-cleaning",
-      "gutter-cleaning",
+      "roof-cleaning",
       "flat-roof-repairs",
-      "fascias-and-soffits",
+      "slate-roof-cleaning",
     ],
     nearbyAreas: ["aintree", "walton", "anfield", "kirkdale"],
     facts: [

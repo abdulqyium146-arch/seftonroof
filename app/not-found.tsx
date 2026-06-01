@@ -31,7 +31,7 @@ export default function NotFound() {
             { label: "Roof Repairs", href: "/services/roof-repairs" },
             { label: "Emergency", href: "/services/emergency-roof-repairs" },
             { label: "Roof Cleaning", href: "/services/roof-cleaning" },
-            { label: "Gutters", href: "/services/gutter-cleaning" },
+            { label: "Flat Roofs", href: "/services/flat-roof-repairs" },
             { label: "All Services", href: "/services" },
             { label: "Contact", href: "/contact" },
           ].map((link) => (

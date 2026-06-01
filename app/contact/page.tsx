@@ -201,13 +201,8 @@ export default function ContactPage() {
                     <option value="roof-repairs">Roof Repairs</option>
                     <option value="emergency-roof-repairs">Emergency Roof Repair</option>
                     <option value="roof-cleaning">Roof Cleaning / Moss Removal</option>
-                    <option value="gutter-cleaning">Gutter Cleaning</option>
-                    <option value="gutter-repairs">Gutter Repairs</option>
-                    <option value="fascias-soffits">Fascias & Soffits</option>
-                    <option value="flat-roof">Flat Roof Repairs</option>
+                    <option value="flat-roof-repairs">Flat Roof Repairs</option>
                     <option value="leadwork">Leadwork</option>
-                    <option value="brickwork">Brickwork / Repointing</option>
-                    <option value="property-maintenance">Property Maintenance</option>
                     <option value="other">Other / Not Sure</option>
                   </select>
                 </div>

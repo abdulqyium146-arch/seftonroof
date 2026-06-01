@@ -85,11 +85,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/gutter-cleaning",
-        destination: "/services/gutter-cleaning",
-        permanent: true,
-      },
-      {
         source: "/roof-cleaning",
         destination: "/services/roof-cleaning",
         permanent: true,

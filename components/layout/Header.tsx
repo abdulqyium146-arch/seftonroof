@@ -10,10 +10,8 @@ import { SITE } from "@/lib/constants";
 import { services } from "@/data/services";
 
 const serviceGroups = {
-  Repairs: services.filter((s) => s.category === "repair").slice(0, 4),
-  Cleaning: services.filter((s) => s.category === "cleaning").slice(0, 4),
-  Guttering: services.filter((s) => s.category === "guttering").slice(0, 2),
-  Maintenance: services.filter((s) => s.category === "maintenance").slice(0, 4),
+  Repairs: services.filter((s) => s.category === "repair"),
+  "Roof Cleaning": services.filter((s) => s.category === "cleaning" || s.category === "commercial"),
 };
 
 export function Header() {
