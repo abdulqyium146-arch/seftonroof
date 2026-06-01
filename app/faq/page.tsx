@@ -4,7 +4,7 @@ import { FAQ } from "@/components/sections/FAQ";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { SchemaOrg } from "@/components/ui/SchemaOrg";
-import { generateFAQSchema } from "@/lib/schema";
+import { generateFAQSchema, generateWebPageSchema, generatePageSpeakableSchema } from "@/lib/schema";
 import { globalFaqs } from "@/data/faqs";
 import { SITE } from "@/lib/constants";
 
@@ -25,9 +25,21 @@ const categories = [
 ];
 
 export default function FAQPage() {
+  const faqPageSchema = generateWebPageSchema({
+    url: `${SITE.url}/faq`,
+    name: "Roofing FAQs Liverpool — Common Roofing Questions Answered",
+    description: "Answers to the most common roofing questions from Liverpool homeowners. Emergency response times, costs, guarantees, roof types, and more — from Sefton Roofing.",
+    type: "FAQPage",
+    dateModified: "2026-01-01",
+    audience: "Liverpool homeowners with roofing questions",
+  });
+  const speakableSchema = generatePageSpeakableSchema(`${SITE.url}/faq`, ["h1", "h2", ".faq-answer"]);
+
   return (
     <>
       <SchemaOrg schema={generateFAQSchema(globalFaqs)} />
+      <SchemaOrg schema={faqPageSchema} />
+      <SchemaOrg schema={speakableSchema} />
 
       {/* Hero */}
       <section className="bg-brand-navy py-20">

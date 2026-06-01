@@ -9,7 +9,7 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { SchemaOrg } from "@/components/ui/SchemaOrg";
-import { generateFAQSchema, generateBreadcrumbSchema, generateAreaPageSchema } from "@/lib/schema";
+import { generateFAQSchema, generateBreadcrumbSchema, generateAreaPageSchema, generateWebPageSchema, generatePageSpeakableSchema } from "@/lib/schema";
 import { generateAreaMetadata } from "@/lib/metadata";
 import { globalFaqs } from "@/data/faqs";
 import { SITE } from "@/lib/constants";
@@ -64,9 +64,24 @@ export default async function AreaPage({ params }: AreaPageProps) {
   const faqSchema = generateFAQSchema(areaFaqs);
   const areaSchema = generateAreaPageSchema(area);
 
+  const webPageSchema = generateWebPageSchema({
+    url: `${SITE.url}/areas/${area.slug}`,
+    name: `Roofing Services ${area.name} — ${SITE.shortName}`,
+    description: area.description,
+    type: "WebPage",
+    dateModified: "2026-01-01",
+    audience: `${area.name} homeowners and landlords needing roofing services`,
+  });
+  const speakableSchema = generatePageSpeakableSchema(
+    `${SITE.url}/areas/${area.slug}`,
+    ["#speakable-title", "#speakable-description", "h2"]
+  );
+
   return (
     <>
       <SchemaOrg schema={areaSchema} />
+      <SchemaOrg schema={webPageSchema} />
+      <SchemaOrg schema={speakableSchema} />
       <SchemaOrg schema={breadcrumbSchema} />
       <SchemaOrg schema={faqSchema} />
 

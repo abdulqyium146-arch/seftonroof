@@ -11,7 +11,7 @@ import { ServiceAreas } from "@/components/sections/ServiceAreas";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { SchemaOrg } from "@/components/ui/SchemaOrg";
-import { generateFAQSchema } from "@/lib/schema";
+import { generateFAQSchema, generateWebPageSchema, generatePageSpeakableSchema, generateOrganizationEEATSchema } from "@/lib/schema";
 import { globalFaqs } from "@/data/faqs";
 import { SITE } from "@/lib/constants";
 
@@ -34,8 +34,24 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const faqSchema = generateFAQSchema(globalFaqs.slice(0, 10));
 
+  const webPageSchema = generateWebPageSchema({
+    url: SITE.url,
+    name: `${SITE.name} | Liverpool's Trusted Roofing Specialists`,
+    description: "Liverpool's highest-rated roofing company. Expert roof repairs, cleaning, gutter services and property maintenance across Merseyside. Free quotes · 24/7 emergency · 10-year guarantee.",
+    type: "WebPage",
+    datePublished: "2010-01-01",
+    dateModified: "2026-05-01",
+    audience: "Liverpool and Merseyside homeowners, landlords, and commercial property managers",
+  });
+
+  const speakableSchema = generatePageSpeakableSchema(SITE.url, ["h1", "#speakable-description", "h2"]);
+  const organizationEEATSchema = generateOrganizationEEATSchema();
+
   return (
     <>
+      <SchemaOrg schema={organizationEEATSchema} />
+      <SchemaOrg schema={webPageSchema} />
+      <SchemaOrg schema={speakableSchema} />
       <SchemaOrg schema={faqSchema} />
 
       {/* 1. Premium hero */}

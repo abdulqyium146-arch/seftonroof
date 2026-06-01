@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { TrustBadges } from "@/components/ui/TrustBadges";
+import { SchemaOrg } from "@/components/ui/SchemaOrg";
+import { generateOrganizationEEATSchema, generateWebPageSchema } from "@/lib/schema";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -55,8 +57,21 @@ const milestones = [
 ];
 
 export default function AboutPage() {
+  const orgEEATSchema = generateOrganizationEEATSchema();
+  const webPageSchema = generateWebPageSchema({
+    url: `${SITE.url}/about`,
+    name: "About Sefton Roofing — Liverpool Roofing Specialists",
+    description: "Learn about Sefton Roofing & Property Maintenance — Liverpool's trusted local roofing company based in Waterloo. 14+ years experience, 4.9★ rated, fully insured.",
+    type: "AboutPage",
+    datePublished: "2010-01-01",
+    dateModified: "2026-01-01",
+    audience: "Liverpool homeowners researching local roofing companies",
+  });
+
   return (
     <>
+      <SchemaOrg schema={orgEEATSchema} />
+      <SchemaOrg schema={webPageSchema} />
       {/* Hero */}
       <section className="bg-brand-navy py-20">
         <div className="container-xl">

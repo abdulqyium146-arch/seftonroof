@@ -11,7 +11,7 @@ import { testimonials } from "@/data/testimonials";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { SchemaOrg } from "@/components/ui/SchemaOrg";
-import { generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema, generateHowToSchema } from "@/lib/schema";
+import { generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema, generateHowToSchema, generatePageSpeakableSchema } from "@/lib/schema";
 import { generateServiceMetadata } from "@/lib/metadata";
 import { SITE } from "@/lib/constants";
 
@@ -79,6 +79,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
       : {}),
   };
 
+  const speakableSchema = generatePageSpeakableSchema(
+    `${SITE.url}/services/${service.slug}`,
+    ["#speakable-title", "#speakable-description", "h2"]
+  );
+
   const relatedServices = (() => {
     const same = services.filter((s) => s.category === service.category && s.slug !== service.slug).slice(0, 3);
     if (same.length > 0) return same;
@@ -95,6 +100,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   return (
     <>
       <SchemaOrg schema={webPageSchema} />
+      <SchemaOrg schema={speakableSchema} />
       <SchemaOrg schema={serviceSchema} />
       <SchemaOrg schema={howToSchema} />
       <SchemaOrg schema={faqSchema} />

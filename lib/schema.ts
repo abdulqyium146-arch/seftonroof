@@ -409,3 +409,104 @@ export function generateSpeakableSchema(cssSelectors: string[]) {
     cssSelector: cssSelectors,
   };
 }
+
+// WebPage schema — signals freshness, links page to WebSite entity, supports AIO/GEO
+export function generateWebPageSchema(options: {
+  url: string;
+  name: string;
+  description: string;
+  type?: "WebPage" | "AboutPage" | "FAQPage" | "ContactPage" | "ServicePage" | "CollectionPage";
+  datePublished?: string;
+  dateModified?: string;
+  audience?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": options.type ?? "WebPage",
+    "@id": `${options.url}#webpage`,
+    url: options.url,
+    name: options.name,
+    description: options.description,
+    inLanguage: "en-GB",
+    isPartOf: { "@id": `${SITE.url}/#website` },
+    publisher: { "@id": `${SITE.url}/#organization` },
+    ...(options.datePublished ? { datePublished: options.datePublished, dateModified: options.dateModified ?? options.datePublished } : {}),
+    ...(options.audience ? { audience: { "@type": "Audience", audienceType: options.audience } } : {}),
+  };
+}
+
+// Standalone SpeakableSpecification — tells voice / AEO engines which CSS selectors carry the primary answer
+export function generatePageSpeakableSchema(pageUrl: string, cssSelectors: string[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SpeakableSpecification",
+    "@id": `${pageUrl}#speakable`,
+    cssSelector: cssSelectors,
+    url: pageUrl,
+  };
+}
+
+// E-E-A-T enhanced Organization — used on About page and high-authority placements
+export function generateOrganizationEEATSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness", "RoofingContractor"],
+    "@id": `${SITE.url}/#organization`,
+    name: SITE.name,
+    alternateName: ["Sefton Roofing", "Sefton Roofing Liverpool", "Sefton Roofing & Property Maintenance"],
+    url: SITE.url,
+    telephone: SITE.phone,
+    email: SITE.email,
+    foundingDate: SITE.founded,
+    foundingLocation: {
+      "@type": "Place",
+      name: "Waterloo, Liverpool, UK",
+      geo: { "@type": "GeoCoordinates", latitude: SITE.geo.lat, longitude: SITE.geo.lng },
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: SITE.address.street,
+      addressLocality: SITE.address.city,
+      addressRegion: SITE.address.county,
+      postalCode: SITE.address.postcode,
+      addressCountry: "GB",
+    },
+    numberOfEmployees: { "@type": "QuantitativeValue", value: 12 },
+    slogan: SITE.tagline,
+    description: SITE.description,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: SITE.rating,
+      reviewCount: SITE.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    hasCredential: [
+      { "@type": "EducationalOccupationalCredential", credentialCategory: "Public Liability Insurance — £5 Million Cover" },
+      { "@type": "EducationalOccupationalCredential", credentialCategory: "Employer's Liability Insurance" },
+      { "@type": "EducationalOccupationalCredential", credentialCategory: "10-Year Workmanship Guarantee" },
+    ],
+    knowsAbout: [
+      "Roof Repairs Liverpool",
+      "Emergency Roof Repairs",
+      "Flat Roof Repairs",
+      "Roof Cleaning Liverpool",
+      "Moss Removal",
+      "Soft Washing",
+      "Gutter Cleaning Liverpool",
+      "Fascias and Soffits",
+      "Leadwork",
+      "Brickwork",
+      "Property Maintenance",
+      "Commercial Roof Cleaning",
+      "EPDM Flat Roofing",
+      "Victorian Slate Roofs",
+    ],
+    award: [
+      `${SITE.rating}-star rated roofing contractor on Google (${SITE.reviewCount}+ reviews)`,
+      `Liverpool's highest-rated roofing specialist, ${SITE.founded}–present`,
+    ],
+    sameAs: [SITE.social.facebook, SITE.social.instagram, SITE.social.google],
+    isPartOf: { "@id": `${SITE.url}/#website` },
+  };
+}
