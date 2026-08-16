@@ -631,8 +631,6 @@ export const services: Service[] = [
     popular: true,
     category: "commercial",
   },
-];
-
   {
     slug: "gutter-cleaning",
     name: "Gutter Cleaning",

@@ -507,8 +507,6 @@ For professional exterior cleaning services across Newton-le-Willows, Warrington
       },
     ],
   },
-];
-
   {
     slug: "gutter-cleaning-liverpool-complete-guide",
     title: "Gutter Cleaning Liverpool: Complete Guide 2026 — Costs, Frequency & Choosing a Pro",
