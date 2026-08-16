@@ -1,6 +1,7 @@
-import Link from "next/link";
-import { Phone, ArrowRight, Clock, MapPin, CheckCircle } from "lucide-react";
+import { Phone, MessageCircle, ArrowRight, Clock, MapPin, CheckCircle } from "lucide-react";
 import { SITE } from "@/lib/constants";
+
+const WHATSAPP_URL = `https://wa.me/447845463877?text=Hi%2C%20I'd%20like%20a%20free%20roofing%20quote.%20I'm%20based%20in%20Liverpool%20%2F%20Merseyside.`;
 
 const guarantees = [
   "Free, no-obligation quotes",
@@ -52,8 +53,8 @@ export function FinalCTA() {
 
                 <p className="text-slate-300 text-lg leading-relaxed mb-8">
                   Join over 1,850 Liverpool homeowners who have trusted Sefton Roofing
-                  with their properties. Call now or fill in our simple form — we&apos;ll
-                  get back to you the same day.
+                  with their properties. Call us or WhatsApp a photo of your roof —
+                  we&apos;ll give you a price usually within the hour.
                 </p>
 
                 {/* Guarantee list */}
@@ -94,30 +95,21 @@ export function FinalCTA() {
                   <ArrowRight className="w-5 h-5 opacity-70 group-hover:translate-x-1 transition-transform" />
                 </a>
 
-                {/* Secondary: Online form */}
-                <Link
-                  href="/contact"
-                  className="flex items-center gap-4 bg-white/10 border border-white/20 hover:bg-white/20 text-white p-6 rounded-2xl transition-colors group"
+                {/* Secondary: WhatsApp */}
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 bg-green-600 hover:bg-green-700 text-white p-6 rounded-2xl transition-colors group shadow-lg"
                 >
-                  <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
-                    <ArrowRight className="w-7 h-7" />
+                  <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-colors">
+                    <MessageCircle className="w-7 h-7" />
                   </div>
                   <div className="flex-1">
-                    <div className="font-bold text-xl">Request a Free Quote Online</div>
-                    <div className="text-slate-400 text-sm">Fill in our form · We reply same day</div>
+                    <div className="font-bold text-xl">WhatsApp Us</div>
+                    <div className="text-green-100 text-sm">Send a photo · Quote usually within 1 hour</div>
                   </div>
                   <ArrowRight className="w-5 h-5 opacity-70 group-hover:translate-x-1 transition-transform" />
-                </Link>
-
-                {/* Email */}
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="flex items-center gap-4 bg-white/5 border border-white/10 hover:bg-white/10 text-white p-5 rounded-2xl transition-colors"
-                >
-                  <div className="flex-1">
-                    <div className="text-slate-400 text-xs mb-1">Email us</div>
-                    <div className="font-medium">{SITE.email}</div>
-                  </div>
                 </a>
               </div>
             </div>

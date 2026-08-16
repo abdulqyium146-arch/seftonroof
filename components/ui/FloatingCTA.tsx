@@ -5,6 +5,8 @@ import { Phone, MessageCircle, X, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/constants";
 
+const WHATSAPP_URL = `https://wa.me/447845463877?text=Hi%2C%20I'd%20like%20a%20free%20roofing%20quote.%20I'm%20based%20in%20Liverpool%20%2F%20Merseyside.`;
+
 export function FloatingCTA() {
   const [isVisible, setIsVisible] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -37,10 +39,14 @@ export function FloatingCTA() {
             <span>{SITE.phoneDisplay}</span>
           </a>
           <a
-            href="/contact"
-            className="flex-1 flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white font-semibold py-3 rounded-xl"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 flex items-center justify-center gap-2 bg-green-600 text-white font-bold py-3 rounded-xl"
+            aria-label="WhatsApp Sefton Roofing for a free quote"
           >
-            Free Quote
+            <MessageCircle className="w-5 h-5" />
+            <span>WhatsApp</span>
           </a>
         </div>
       </div>
@@ -66,23 +72,15 @@ export function FloatingCTA() {
         {/* Expandable CTA group */}
         <div className="flex flex-col items-end gap-2">
           {expanded && (
-            <>
-              <a
-                href={`https://wa.me/447845463877?text=Hi, I'd like a free roofing quote in Liverpool`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-3 rounded-xl shadow-lg transition-colors"
-              >
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp
-              </a>
-              <a
-                href="/contact"
-                className="flex items-center gap-2 bg-brand-navy hover:bg-brand-navy-mid text-white font-semibold px-4 py-3 rounded-xl shadow-lg border border-white/10 transition-colors"
-              >
-                Free Quote
-              </a>
-            </>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-3 rounded-xl shadow-lg transition-colors"
+            >
+              <MessageCircle className="w-5 h-5" />
+              WhatsApp
+            </a>
           )}
 
           <div className="flex items-center gap-2">

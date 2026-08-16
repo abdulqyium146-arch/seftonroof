@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     images: [`${SITE.url}/logo.webp`],
   },
   verification: {
-    google: "789bd5951d6ca0e9",
+    google: "9YFxNF-B3BSk9R4j8NvSVNaWYDJRhGA_-SgY13GLOu8",
   },
   alternates: {
     canonical: SITE.url,

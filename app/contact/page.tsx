@@ -1,57 +1,30 @@
 import type { Metadata } from "next";
-import { Phone, Mail, MapPin, Clock, AlertTriangle, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Clock, MessageCircle, CheckCircle, Camera, Zap, Star } from "lucide-react";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { TrustBadges } from "@/components/ui/TrustBadges";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Contact Sefton Roofing — Free Roofing Quotes Liverpool",
+  title: { absolute: "Get a Free Roofing Quote Liverpool — Call or WhatsApp | Sefton Roofing" },
   description:
-    "Contact Sefton Roofing for a free, no-obligation roofing quote in Liverpool. Call 07845 463877, email, or fill in our contact form. 24/7 emergency line available.",
+    "Get a free roofing quote in seconds. Call 07845 463877 or WhatsApp us a photo of your roof — we'll give you a price usually within the hour. No forms. No waiting. Liverpool & Merseyside.",
   alternates: { canonical: `${SITE.url}/contact` },
 };
 
-const contactMethods = [
-  {
-    icon: Phone,
-    title: "Call Us",
-    primary: SITE.phoneDisplay,
-    sub: "Mon–Fri 7am–6pm · Sat 7am–2pm · Emergency 24/7",
-    action: `tel:${SITE.phone}`,
-    actionLabel: "Call now",
-    color: "orange",
-    emergency: false,
-  },
-  {
-    icon: AlertTriangle,
-    title: "Emergency Line",
-    primary: "24/7 Emergency",
-    sub: "Roof emergencies across Liverpool — 60-minute response",
-    action: `tel:${SITE.phone}`,
-    actionLabel: "Emergency call",
-    color: "red",
-    emergency: true,
-  },
-  {
-    icon: Mail,
-    title: "Email Us",
-    primary: SITE.email,
-    sub: "We reply to all emails within 4 hours during business hours",
-    action: `mailto:${SITE.email}`,
-    actionLabel: "Send email",
-    color: "blue",
-    emergency: false,
-  },
-  {
-    icon: MessageCircle,
-    title: "WhatsApp",
-    primary: "Message Us",
-    sub: "Send photos of your roofing issue for a faster assessment",
-    action: `https://wa.me/447845463877?text=Hi, I'd like a free roofing quote`,
-    actionLabel: "WhatsApp us",
-    color: "green",
-    emergency: false,
-  },
+const WHATSAPP_URL = `https://wa.me/447845463877?text=Hi%2C%20I'd%20like%20a%20free%20roofing%20quote.%20I'm%20based%20in%20Liverpool%20%2F%20Merseyside.`;
+
+const whatsappBenefits = [
+  { icon: Camera, text: "Send photos of the issue — we assess faster" },
+  { icon: Zap, text: "Quotes typically within the hour" },
+  { icon: CheckCircle, text: "No forms, no callbacks, no waiting" },
+  { icon: Star, text: "Chat directly with the team, not a call centre" },
+];
+
+const steps = [
+  { num: "1", title: "Tap WhatsApp or Call", desc: "No forms. Contact us directly in seconds." },
+  { num: "2", title: "Describe your roof or send a photo", desc: "WhatsApp is perfect for this — photos help us assess and price faster." },
+  { num: "3", title: "Get your free quote", desc: "We reply fast — usually within the hour on WhatsApp, or instantly by phone." },
+  { num: "4", title: "We visit & confirm in writing", desc: "For larger jobs we'll visit free of charge and confirm everything in writing." },
 ];
 
 export default function ContactPage() {
@@ -62,198 +35,134 @@ export default function ContactPage() {
         <div className="container-xl">
           <Breadcrumb items={[{ label: "Contact" }]} />
           <div className="max-w-2xl mt-8">
-            <div className="badge-orange mb-4 w-fit">Get in Touch</div>
+            <div className="badge-orange mb-4 w-fit">Free Quotes · No Forms</div>
             <h1 className="text-4xl sm:text-5xl font-black text-white mb-4">
-              Free Roofing Quotes{" "}
-              <span className="text-gradient-orange">Across Liverpool</span>
+              Get a Free Quote in{" "}
+              <span className="text-gradient-orange">Seconds</span>
             </h1>
             <p className="text-slate-300 text-lg leading-relaxed">
-              Ready for a free, no-obligation roofing quote? Call us, email, or fill
-              in the form below — we respond same day to all enquiries.
+              Call us direct or WhatsApp a photo of your roof. We reply fast — usually within
+              the hour. No forms, no waiting, no automated responses.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact methods */}
+      {/* Primary CTAs */}
       <section className="py-16 bg-white">
         <div className="container-xl">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
-            {contactMethods.map((method) => {
-              const Icon = method.icon;
-              return (
-                <a
-                  key={method.title}
-                  href={method.action}
-                  target={method.action.startsWith("https") ? "_blank" : undefined}
-                  rel={method.action.startsWith("https") ? "noopener noreferrer" : undefined}
-                  className={`card-base p-6 hover:-translate-y-1 transition-all duration-300 group ${
-                    method.emergency ? "border-2 border-brand-red/20 hover:border-brand-red/40" : ""
-                  }`}
-                >
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
-                    method.color === "red" ? "bg-brand-red/10 group-hover:bg-brand-red/20" :
-                    method.color === "green" ? "bg-green-100 group-hover:bg-green-200" :
-                    method.color === "blue" ? "bg-blue-100 group-hover:bg-blue-200" :
-                    "bg-brand-orange/10 group-hover:bg-brand-orange/20"
-                  } transition-colors`}>
-                    <Icon className={`w-6 h-6 ${
-                      method.color === "red" ? "text-brand-red" :
-                      method.color === "green" ? "text-green-700" :
-                      method.color === "blue" ? "text-blue-700" :
-                      "text-brand-orange"
-                    }`} />
-                  </div>
-                  <h2 className="font-bold text-brand-navy text-base mb-1">{method.title}</h2>
-                  <div className="font-semibold text-brand-navy text-sm mb-2">{method.primary}</div>
-                  <p className="text-slate-500 text-xs leading-relaxed mb-3">{method.sub}</p>
-                  <span className={`text-sm font-semibold ${
-                    method.color === "red" ? "text-brand-red" :
-                    method.color === "green" ? "text-green-700" :
-                    "text-brand-orange"
-                  }`}>
-                    {method.actionLabel} →
-                  </span>
-                </a>
-              );
-            })}
-          </div>
+          <div className="grid lg:grid-cols-3 gap-10">
 
-          {/* Form + Info */}
-          <div className="grid lg:grid-cols-3 gap-12">
-            {/* Form */}
-            <div className="lg:col-span-2">
+            {/* Left: action cards */}
+            <div className="lg:col-span-2 space-y-5">
               <h2 className="text-2xl font-bold text-brand-navy mb-6">
-                Request a Free Roofing Quote
+                Two ways to reach us — both instant
               </h2>
-              <form className="space-y-5" aria-label="Free roofing quote request form">
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-brand-navy mb-1.5">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      autoComplete="name"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange transition-colors placeholder:text-slate-400"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-brand-navy mb-1.5">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      required
-                      autoComplete="tel"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange transition-colors placeholder:text-slate-400"
-                      placeholder="Your phone number"
-                    />
+
+              {/* WhatsApp — primary */}
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-5 bg-green-600 hover:bg-green-700 text-white p-7 rounded-2xl transition-colors group shadow-lg"
+              >
+                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-colors">
+                  <MessageCircle className="w-9 h-9" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="font-black text-2xl mb-1">WhatsApp Us</div>
+                  <div className="text-green-100 text-sm leading-relaxed">
+                    Tap to open WhatsApp — send a message or photo of your roof.<br />
+                    <strong className="text-white">Fastest way to get a quote.</strong>
                   </div>
                 </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-brand-navy mb-1.5">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    autoComplete="email"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange transition-colors placeholder:text-slate-400"
-                    placeholder="your@email.com"
-                  />
+                <div className="hidden sm:flex flex-col items-center gap-1 flex-shrink-0 bg-white/20 rounded-xl px-4 py-3">
+                  <span className="text-xs font-semibold text-green-100">Typical reply</span>
+                  <span className="text-xl font-black">1 hr</span>
                 </div>
+              </a>
 
-                <div>
-                  <label htmlFor="address" className="block text-sm font-semibold text-brand-navy mb-1.5">
-                    Property Address / Postcode *
-                  </label>
-                  <input
-                    type="text"
-                    id="address"
-                    name="address"
-                    required
-                    autoComplete="street-address"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange transition-colors placeholder:text-slate-400"
-                    placeholder="Property address or postcode"
-                  />
+              {/* WhatsApp benefits */}
+              <div className="grid sm:grid-cols-2 gap-3 p-5 bg-green-50 rounded-2xl border border-green-100">
+                {whatsappBenefits.map(({ icon: Icon, text }) => (
+                  <div key={text} className="flex items-center gap-3">
+                    <Icon className="w-4 h-4 text-green-700 flex-shrink-0" />
+                    <span className="text-slate-700 text-sm">{text}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Phone */}
+              <a
+                href={`tel:${SITE.phone}`}
+                className="flex items-center gap-5 bg-brand-orange hover:bg-brand-orange-dark text-white p-7 rounded-2xl transition-colors group shadow-lg"
+              >
+                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-colors">
+                  <Phone className="w-9 h-9" />
                 </div>
-
-                <div>
-                  <label htmlFor="service" className="block text-sm font-semibold text-brand-navy mb-1.5">
-                    Service Required
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange transition-colors bg-white"
-                  >
-                    <option value="">Select a service...</option>
-                    <option value="roof-repairs">Roof Repairs</option>
-                    <option value="emergency-roof-repairs">Emergency Roof Repair</option>
-                    <option value="roof-cleaning">Roof Cleaning / Moss Removal</option>
-                    <option value="flat-roof-repairs">Flat Roof Repairs</option>
-                    <option value="leadwork">Leadwork</option>
-                    <option value="other">Other / Not Sure</option>
-                  </select>
+                <div className="flex-1 min-w-0">
+                  <div className="font-black text-2xl mb-1">{SITE.phoneDisplay}</div>
+                  <div className="text-orange-100 text-sm leading-relaxed">
+                    Speak directly with the team.<br />
+                    <strong className="text-white">Emergency line available 24/7.</strong>
+                  </div>
                 </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-brand-navy mb-1.5">
-                    Tell Us About Your Roof / Issue
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange transition-colors placeholder:text-slate-400 resize-none"
-                    placeholder="Describe the issue, the type of roof, when it started, etc. The more detail you can give, the more accurate your quote will be."
-                  />
+                <div className="hidden sm:flex flex-col items-center gap-1 flex-shrink-0 bg-white/20 rounded-xl px-4 py-3">
+                  <span className="text-xs font-semibold text-orange-100">Emergency</span>
+                  <span className="text-xl font-black">24/7</span>
                 </div>
+              </a>
 
-                <div className="flex items-start gap-3">
-                  <input
-                    type="checkbox"
-                    id="consent"
-                    name="consent"
-                    required
-                    className="mt-1 w-4 h-4 text-brand-orange rounded border-slate-300"
-                  />
-                  <label htmlFor="consent" className="text-slate-600 text-sm leading-relaxed">
-                    I agree to Sefton Roofing contacting me about my enquiry. I understand
-                    my data will be handled in accordance with the{" "}
-                    <a href="/privacy-policy" className="text-brand-orange hover:underline">
-                      privacy policy
-                    </a>
-                    .
-                  </label>
+              {/* Hours note */}
+              <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                <Clock className="w-4 h-4 text-brand-orange mt-0.5 flex-shrink-0" />
+                <div className="text-slate-600 text-sm">
+                  <strong className="text-brand-navy">Office hours:</strong> Mon–Fri {SITE.openingHours.weekday} · Sat {SITE.openingHours.saturday}<br />
+                  <strong className="text-brand-red">Emergency line: 24/7</strong> — call any time for urgent roof damage, leaks, or storm damage.
                 </div>
+              </div>
 
-                <button
-                  type="submit"
-                  className="btn-primary-lg w-full sm:w-auto"
-                >
-                  <Phone className="w-5 h-5" />
-                  Request Free Quote
-                </button>
-              </form>
+              {/* How it works */}
+              <div className="pt-4">
+                <h3 className="text-lg font-bold text-brand-navy mb-5">How it works</h3>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {steps.map((s) => (
+                    <div key={s.num} className="flex gap-4">
+                      <div className="w-8 h-8 bg-brand-orange text-white rounded-full flex items-center justify-center text-sm font-black flex-shrink-0 mt-0.5">
+                        {s.num}
+                      </div>
+                      <div>
+                        <div className="font-bold text-brand-navy text-sm mb-1">{s.title}</div>
+                        <div className="text-slate-600 text-xs leading-relaxed">{s.desc}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            {/* Sidebar info */}
+            {/* Sidebar */}
             <div className="space-y-6">
               {/* Contact details */}
               <div className="bg-brand-navy text-white rounded-2xl p-6">
                 <h3 className="font-bold text-lg mb-5">Direct Contact</h3>
                 <div className="space-y-4">
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 group"
+                  >
+                    <div className="w-9 h-9 bg-green-600/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <MessageCircle className="w-4 h-4 text-green-400" />
+                    </div>
+                    <div>
+                      <div className="text-white font-semibold text-sm group-hover:text-green-400 transition-colors">
+                        WhatsApp Us
+                      </div>
+                      <div className="text-slate-500 text-xs">Fastest way · Send photos</div>
+                    </div>
+                  </a>
                   <a href={`tel:${SITE.phone}`} className="flex items-center gap-3 group">
                     <div className="w-9 h-9 bg-brand-orange/20 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Phone className="w-4 h-4 text-brand-orange" />
@@ -264,12 +173,6 @@ export default function ContactPage() {
                       </div>
                       <div className="text-slate-500 text-xs">Emergency 24/7</div>
                     </div>
-                  </a>
-                  <a href={`mailto:${SITE.email}`} className="flex items-center gap-3">
-                    <div className="w-9 h-9 bg-brand-orange/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-4 h-4 text-brand-orange" />
-                    </div>
-                    <span className="text-slate-300 text-sm">{SITE.email}</span>
                   </a>
                   <div className="flex items-start gap-3">
                     <div className="w-9 h-9 bg-brand-orange/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -293,24 +196,21 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* What to expect */}
+              {/* Trust signals */}
               <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                <h3 className="font-bold text-brand-navy text-base mb-4">
-                  What Happens Next?
-                </h3>
+                <h3 className="font-bold text-brand-navy text-base mb-4">Why choose us?</h3>
                 <div className="space-y-3">
                   {[
-                    "We call or email you within 4 hours",
-                    "A surveyor visits your property — free",
-                    "You receive a detailed written quote",
-                    "No pressure to proceed",
-                    "Work starts on your agreed date",
-                  ].map((step, i) => (
-                    <div key={step} className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-brand-orange text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
-                        {i + 1}
-                      </div>
-                      <span className="text-slate-700 text-sm">{step}</span>
+                    "4.9★ from 127+ Google reviews",
+                    "1,850+ roofs completed since 2010",
+                    "10-year workmanship guarantee",
+                    "Fully insured operatives",
+                    "60-minute emergency response",
+                    "Free, no-obligation quotes",
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-3">
+                      <CheckCircle className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                      <span className="text-slate-700 text-sm">{item}</span>
                     </div>
                   ))}
                 </div>

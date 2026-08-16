@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import { Phone, Star, Shield, CheckCircle, ArrowRight, MapPin, Clock } from "lucide-react";
+import { Phone, Star, Shield, CheckCircle, MessageCircle, MapPin, Clock } from "lucide-react";
+
+const WHATSAPP_URL = `https://wa.me/447845463877?text=Hi%2C%20I'd%20like%20a%20free%20roofing%20quote.%20I'm%20based%20in%20Liverpool%20%2F%20Merseyside.`;
 import { SITE } from "@/lib/constants";
 
 const stats = [
@@ -118,13 +119,15 @@ export function Hero() {
                 <Phone className="w-5 h-5" />
                 Call {SITE.phoneDisplay}
               </a>
-              <Link
-                href="/contact"
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-secondary text-lg"
               >
-                Get Free Quote
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+                <MessageCircle className="w-5 h-5" />
+                WhatsApp Us
+              </a>
             </div>
 
             {/* Opening hours note */}
