@@ -1,0 +1,138 @@
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
+import "@/styles/globals.css";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { FloatingCTA } from "@/components/ui/FloatingCTA";
+import { SchemaOrg } from "@/components/ui/SchemaOrg";
+import { generateLocalBusinessSchema, generateWebSiteSchema } from "@/lib/schema";
+import { SITE } from "@/lib/constants";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+  preload: true,
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: `${SITE.name} | Liverpool's Trusted Roofing Specialists`,
+    template: `%s | ${SITE.shortName} Liverpool`,
+  },
+  description: SITE.description,
+  keywords:
+    "roofing Liverpool, roofer Liverpool, roof repairs Liverpool, roof cleaning Liverpool, gutter cleaning Liverpool, Sefton Roofing, emergency roofing Liverpool, Merseyside roofer",
+  authors: [{ name: SITE.name, url: SITE.url }],
+  creator: SITE.name,
+  publisher: SITE.name,
+  category: "Home Services",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      { rel: "android-chrome-icon", url: "/android-chrome-192x192.png" },
+      { rel: "android-chrome-icon", url: "/android-chrome-512x512.png" },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    siteName: SITE.name,
+    locale: "en_GB",
+    // og:image is auto-injected from app/opengraph-image.tsx (1200×630 branded card).
+    // logo.webp is listed as a secondary fallback for crawlers that don't support dynamic images.
+    images: [
+      {
+        url: `${SITE.url}/logo.webp`,
+        width: 1275,
+        height: 638,
+        alt: `${SITE.name} — Liverpool's Trusted Roofing Specialists`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@seftonroofing",
+    creator: "@seftonroofing",
+    images: [`${SITE.url}/logo.webp`],
+  },
+  verification: {
+    google: "789bd5951d6ca0e9",
+  },
+  alternates: {
+    canonical: SITE.url,
+  },
+  other: {
+    "geo.region": "GB-LIV",
+    "geo.placename": "Liverpool",
+    "geo.position": `${SITE.geo.lat};${SITE.geo.lng}`,
+    "ICBM": `${SITE.geo.lat}, ${SITE.geo.lng}`,
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#0B1628" },
+    { media: "(prefers-color-scheme: dark)", color: "#0B1628" },
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en-GB" className={inter.variable}>
+      <head>
+        <link rel="preconnect" href="https://maps.googleapis.com" />
+        <link rel="preconnect" href="https://maps.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//maps.googleapis.com" />
+        <link rel="dns-prefetch" href="//maps.gstatic.com" />
+      </head>
+      <body className="antialiased">
+        <SchemaOrg schema={generateLocalBusinessSchema()} />
+        <SchemaOrg schema={generateWebSiteSchema()} />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-brand-orange focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold"
+        >
+          Skip to main content
+        </a>
+        <Header />
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
+        <Footer />
+        <FloatingCTA />
+      </body>
+    </html>
+  );
+}
